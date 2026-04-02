@@ -1,5 +1,13 @@
 name: Publish
 
+# Triggered when a GitHub Release is published.
+# Requires repository secrets:
+#   NPM_TOKEN   — from npmjs.com → Access Tokens → Automation token
+#   NUGET_TOKEN — from nuget.org → API Keys
+#
+# Add them at: Settings → Secrets and variables → Actions → New repository secret
+# Until secrets are added, this workflow will be skipped gracefully.
+
 on:
   release:
     types: [published]
@@ -8,9 +16,11 @@ jobs:
   publish-npm:
     name: Publish to npm
     runs-on: ubuntu-latest
+    # Only run if the NPM_TOKEN secret exists
+    if: ${{ secrets.NPM_TOKEN != '' }}
     permissions:
       contents: read
-      id-token: write  # for npm provenance
+      id-token: write
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -34,6 +44,8 @@ jobs:
   publish-nuget:
     name: Publish to NuGet
     runs-on: ubuntu-latest
+    # Only run if the NUGET_TOKEN secret exists
+    if: ${{ secrets.NUGET_TOKEN != '' }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-dotnet@v4
@@ -43,7 +55,7 @@ jobs:
         run: dotnet test -c Release
         working-directory: lib/dotnet
       - name: Pack
-        run: dotnet pack InPage.Format/InPage.Format.csproj -c Release --no-build -o ./nupkg
+        run: dotnet pack InPage.Format/InPage.Format.csproj -c Release -o ./nupkg
         working-directory: lib/dotnet
       - name: Push to NuGet
         run: dotnet nuget push ./nupkg/*.nupkg --api-key ${{ secrets.NUGET_TOKEN }} --source https://api.nuget.org/v3/index.json --skip-duplicate
