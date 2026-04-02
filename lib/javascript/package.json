@@ -1,7 +1,7 @@
 {
-  "name": "@inpage-format/javascript",
+  "name": "inpage-format",
   "version": "1.0.0",
-  "description": "Reference TypeScript library for decoding InPage .INP binary files",
+  "description": "Decode InPage .INP Urdu/Arabic word processor files — TypeScript library with character maps, v1/v2/v3 decoder, and noise filter",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -12,14 +12,38 @@
       "types": "./dist/index.d.ts"
     }
   },
+  "files": [
+    "dist",
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
     "build": "tsc",
     "test": "vitest run",
     "test:watch": "vitest",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run typecheck && npm test && npm run build"
   },
-  "keywords": ["inpage", "urdu", "inp", "binary", "decoder", "nastaliq"],
+  "keywords": [
+    "inpage", "urdu", "arabic", "nastaliq", "inp",
+    "binary-format", "decoder", "pakistan", "unicode",
+    "ole2", "cfb", "word-processor"
+  ],
+  "author": "inpage-format contributors",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iamahsanmehmood/inpage-format.git",
+    "directory": "lib/javascript"
+  },
+  "homepage": "https://github.com/iamahsanmehmood/inpage-format#readme",
+  "bugs": {
+    "url": "https://github.com/iamahsanmehmood/inpage-format/issues"
+  },
+  "engines": {
+    "node": ">=18"
+  },
   "devDependencies": {
     "typescript": "^5.4.0",
     "vitest": "^1.6.0"

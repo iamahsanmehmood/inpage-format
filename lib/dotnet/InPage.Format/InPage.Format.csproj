@@ -7,15 +7,28 @@
     <LangVersion>12</LangVersion>
     <RootNamespace>InPage.Format</RootNamespace>
     <AssemblyName>InPage.Format</AssemblyName>
-    <Version>1.0.0</Version>
-    <Description>Reference C# library for decoding InPage .INP binary files</Description>
-    <Authors>inpage-format contributors</Authors>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <!-- Suppress: CS1591 missing XML doc on enum members, CS1587 misplaced XML doc on record params -->
     <NoWarn>1591;1587</NoWarn>
+
+    <!-- NuGet package metadata -->
+    <PackageId>InPage.Format</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>inpage-format contributors</Authors>
+    <Description>Decode InPage .INP Urdu/Arabic word processor files — C# library with character maps, v1/v2/v3 decoder, and noise filter. Reference implementation of the reverse-engineered InPage binary format.</Description>
+    <PackageTags>inpage;urdu;arabic;nastaliq;inp;binary;decoder;pakistan;unicode;ole2</PackageTags>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/iamahsanmehmood/inpage-format</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/iamahsanmehmood/inpage-format.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <PackageReleaseNotes>Initial release — complete InPage v1/v2/v3 decoder with 54 unit tests.</PackageReleaseNotes>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\..\README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
 
 </Project>

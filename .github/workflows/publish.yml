@@ -1,0 +1,50 @@
+name: Publish
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  publish-npm:
+    name: Publish to npm
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write  # for npm provenance
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          registry-url: https://registry.npmjs.org
+          cache: npm
+          cache-dependency-path: lib/javascript/package-lock.json
+      - name: Install & test
+        run: npm ci && npm test
+        working-directory: lib/javascript
+      - name: Build
+        run: npm run build
+        working-directory: lib/javascript
+      - name: Publish
+        run: npm publish --provenance --access public
+        working-directory: lib/javascript
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+  publish-nuget:
+    name: Publish to NuGet
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '9.0'
+      - name: Test
+        run: dotnet test -c Release
+        working-directory: lib/dotnet
+      - name: Pack
+        run: dotnet pack InPage.Format/InPage.Format.csproj -c Release --no-build -o ./nupkg
+        working-directory: lib/dotnet
+      - name: Push to NuGet
+        run: dotnet nuget push ./nupkg/*.nupkg --api-key ${{ secrets.NUGET_TOKEN }} --source https://api.nuget.org/v3/index.json --skip-duplicate
+        working-directory: lib/dotnet

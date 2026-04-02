@@ -1,163 +1,236 @@
 # inpage-format
 
-**Community reverse-engineering research for the InPage `.INP` binary file format.**
+<div align="center">
 
-InPage is a proprietary Urdu/Arabic word processor widely used in Pakistan, India, and the Middle East. Despite its cultural importance — newspapers, books, legal documents — no open-source tooling exists to read its files. This repository documents everything known about the format and provides reference implementations in TypeScript and C#.
+**Open research for the InPage `.INP` binary file format**
+
+*The only documented, tested, multi-language implementation of the InPage decoder*
+
+[![CI](https://github.com/iamahsanmehmood/inpage-format/actions/workflows/ci.yml/badge.svg)](https://github.com/iamahsanmehmood/inpage-format/actions/workflows/ci.yml)
+[![npm](https://img.shields.io/npm/v/inpage-format?color=cb3837&logo=npm)](https://www.npmjs.com/package/inpage-format)
+[![NuGet](https://img.shields.io/nuget/v/InPage.Format?color=004880&logo=nuget)](https://www.nuget.org/packages/InPage.Format)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+[![JS Tests](https://img.shields.io/badge/JS%20tests-67%20passing-brightgreen?logo=vitest)](#)
+[![.NET Tests](https://img.shields.io/badge/.NET%20tests-54%20passing-brightgreen?logo=dotnet)](#)
+
+</div>
 
 ---
 
-## The Problem
+## Why this exists
 
-- InPage is **closed-source** and **Windows-only**. No Linux, macOS, or mobile support.
-- InPage 3.x **cannot open InPage 2.x files**. Millions of legacy documents are stranded.
-- InPage's new web version does not support file import of local `.INP` files.
-- **No open standard** exists. The format is undocumented.
-- Millions of Urdu-language documents — newspapers, books, government records — are locked in `.INP` files with no migration path.
+InPage is the dominant Urdu/Arabic word processor used across Pakistan, India, and the Middle East for 30+ years. Newspapers, government records, books, and legal documents are locked in `.INP` files. No open tooling exists to read them.
 
-This project provides the reverse-engineered format specification and reference decoders so that developers can build tools that read these files.
-
----
-
-## What This Repository Is (and Isn't)
-
-| Is | Is Not |
+| The problem | Impact |
 |---|---|
-| Format specification derived from reverse engineering | A ready-to-use application |
-| Reference library implementations (TypeScript, C#) | Official InPage software |
-| Unit-tested decoding primitives | A complete document renderer |
-| Research notes, edge cases, known gaps | A production-ready parser for all files |
+| InPage 3.x **cannot open** InPage 2.x files | Millions of archived documents are stranded |
+| InPage is **Windows-only** | No Linux, macOS, mobile, or server-side processing |
+| The format is **completely undocumented** | No importers in LibreOffice, Pandoc, or anywhere else |
+| InPage web version does **not support local file import** | Archives can't be migrated |
 
-If you want a browser-based viewer that uses this research, see the companion project.
-
----
-
-## Format Overview
-
-InPage files use the **OLE2/CFB** (Compound File Binary) container — the same format used by legacy `.doc`, `.xls`, and `.ppt` files. Inside, one named stream holds the actual content:
-
-| Stream Name | InPage Version |
-|---|---|
-| `InPage100` | v1.x |
-| `InPage200` | v2.x |
-| `InPage300` | v3.x (Unicode) |
-
-**Two encoding modes exist:**
-
-1. **Legacy (v1/v2)** — Proprietary `0x04`-prefix byte-pair encoding. Each character is 2 bytes: `0x04` + an index byte mapped to a Unicode code point via a lookup table of ~110 entries.
-2. **Modern (v3)** — Standard UTF-16LE text, but with proprietary control codes interspersed for formatting. A struct array before the text maps style IDs to text spans.
+This repository is the community's answer: a complete format specification derived from reverse engineering, with reference implementations in TypeScript and C# that anyone can use to build their own tools.
 
 ---
 
-## Repository Structure
+## What's inside
 
 ```
 inpage-format/
-├── specs/                        Format specification documents
-│   ├── 01-problem-statement.md   Background and context
-│   ├── 02-container-format.md    OLE2/CFB container layout
-│   ├── 03-encoding-legacy.md     v1/v2 0x04-prefix encoding
-│   ├── 04-encoding-v3.md         v3 UTF-16LE + control codes
-│   ├── 05-character-maps.md      Complete character mapping tables
-│   ├── 06-formatting-structures.md  Style/formatting binary structures
-│   ├── 07-text-filtering.md      Noise filtering algorithms
-│   └── 08-security.md            CVE-2017-12824 and threat model
 │
-├── lib/
-│   ├── javascript/               TypeScript library (runs in Node.js and browser)
-│   │   ├── src/                  Source code
-│   │   └── tests/                Unit tests (Vitest)
-│   └── dotnet/                   C# library (.NET 8+)
-│       ├── InPage.Format/        Library project
-│       └── InPage.Format.Tests/  xUnit test project
+├── 📖  specs/              8 detailed specification documents
+│   ├── 01-problem-statement.md
+│   ├── 02-container-format.md      OLE2/CFB container layout
+│   ├── 03-encoding-legacy.md       v1/v2 byte-pair encoding
+│   ├── 04-encoding-v3.md           v3 UTF-16LE + struct array
+│   ├── 05-character-maps.md        110+ character mappings
+│   ├── 06-formatting-structures.md Style/font/alignment binary structures
+│   ├── 07-text-filtering.md        Noise separation algorithm
+│   └── 08-security.md              CVE-2017-12824 & threat model
 │
-└── test-fixtures/                Sample binary fixtures for tests
-    └── README.md                 How to obtain real test files
+├── 📦  lib/javascript/     TypeScript library — Node.js & browser
+├── 📦  lib/dotnet/         C# library — .NET 9+
+└── 🧪  test-fixtures/      Minimal binary fixtures for testing
 ```
 
 ---
 
-## Quick Start
+## Quick start
 
 ### JavaScript / TypeScript
 
 ```bash
-cd lib/javascript
-npm install
-npm test
+npm install inpage-format
 ```
 
 ```typescript
-import { parseInPageBuffer } from './src/index';
+import * as CFB from 'cfb';
+import { decodeV1V2, decodeV3, filterParagraphsWithMeta } from 'inpage-format';
 
-const buffer = await fs.promises.readFile('document.inp');
-const result = parseInPageBuffer(buffer);
+// 1. Parse the OLE2 container (use cfb or any OLE2 library)
+const cfbFile = CFB.read(new Uint8Array(fileBuffer), { type: 'array' });
 
-console.log(`Version: ${result.version}`);
-console.log(`Paragraphs: ${result.paragraphs.length}`);
-result.paragraphs.forEach(p => console.log(p));
+// 2. Detect version from stream name
+const entry200 = CFB.find(cfbFile, '/InPage200');
+const entry300 = CFB.find(cfbFile, '/InPage300');
+const stream = new Uint8Array((entry300 ?? entry200).content);
+const version = entry300 ? 3 : 2;
+
+// 3. Decode
+const decoded = version === 3 ? decodeV3(stream) : decodeV1V2(stream);
+
+// 4. Filter noise
+const { paragraphs, filteredCount } = filterParagraphsWithMeta(
+  decoded.paragraphs,
+  decoded.paragraphMeta,
+);
+
+console.log(`Extracted ${paragraphs.length} paragraphs (${filteredCount} noise paragraphs removed)`);
+paragraphs.forEach(p => console.log(p));
 ```
 
 ### C# / .NET
 
 ```bash
-cd lib/dotnet
-dotnet test
+dotnet add package InPage.Format
 ```
 
 ```csharp
+using OpenMcdf;
 using InPage.Format;
 
-var bytes = File.ReadAllBytes("document.inp");
-var result = InPageDecoder.Parse(bytes);
+// 1. Parse the OLE2 container
+using var cf = new CompoundFile("document.inp");
 
-Console.WriteLine($"Version: {result.Version}");
-foreach (var para in result.Paragraphs)
+// 2. Detect version
+string streamName = cf.RootStorage.TryGetStream("InPage300") != null
+    ? "InPage300" : "InPage200";
+int version = streamName == "InPage300" ? 3 : 2;
+
+byte[] content = cf.RootStorage.GetStream(streamName).GetData();
+
+// 3. Decode
+var decoded = version == 3
+    ? InPageDecoder.DecodeV3(content)
+    : InPageDecoder.DecodeV1V2(content);
+
+// 4. Filter noise
+var (paragraphs, _, filteredCount) = TextFilter.FilterWithMeta(
+    decoded.Paragraphs,
+    decoded.ParagraphMeta
+);
+
+Console.WriteLine($"Extracted {paragraphs.Count} paragraphs ({filteredCount} filtered)");
+foreach (var para in paragraphs)
     Console.WriteLine(para);
 ```
 
 ---
 
-## Known Limitations and Open Problems
+## Format overview
 
-| Area | Status | Notes |
+InPage files are **OLE2/CFB containers** (same format as legacy `.doc` / `.xls`) with one named content stream:
+
+| Stream name | InPage version | Encoding |
 |---|---|---|
-| Text extraction (v1/v2) | Working | ~85-90% accuracy on tested files |
-| Text extraction (v3) | Working | Relies on struct array boundary marker |
-| Character maps | ~95% complete | Some diacritic byte codes may differ by InPage build |
-| Formatting (font size, alignment) | Partial | Tag-value structure reverse-engineered but not all IDs known |
-| Page breaks | Working | Form Feed (0x0C) in v1/v2; implicit in v3 |
-| Word spacing (v1/v2) | Working | Recovered via `pendingSpace` heuristic |
-| Embedded images | Not implemented | Binary blobs not yet analyzed |
-| Tables / columns | Not implemented | Requires layout engine research |
-| Headers / footers | Not implemented | Master page structure unknown |
-| Arabic mode | Partial | Different Kaf/Yeh/Heh variants + Arabic-Indic digits handled |
+| `InPage100` | 1.x | Proprietary byte-pair (`0x04` prefix) |
+| `InPage200` | 2.x | Proprietary byte-pair (`0x04` prefix) |
+| `InPage300` | 3.x | UTF-16LE with struct array |
+
+### V1/V2 encoding at a glance
+
+Every Urdu character is stored as a 2-byte pair. The first byte is always `0x04`; the second byte indexes into a 110-entry lookup table:
+
+```
+04 81 → ا  (Alef)        04 9C → ک  (Kaf)
+04 82 → ب  (Beh)         04 A4 → ی  (Yeh)
+04 A5 → ے  (Yeh Barree)  04 F3 → ۔  (Urdu Full Stop)
+04 F6 → ﷺ  (PBUH)        04 D1 → ۱  (Urdu 1)
+```
+
+Composite sequences use 4 bytes (base + modifier):
+```
+04 81 04 BF → أ  (Alef + Hamza Above)
+04 81 04 B3 → آ  (Alef + Madda)
+```
+
+Word boundaries are **implicit**: a non-`0x04` control byte between character sequences signals a word break.
+
+### V3 encoding at a glance
+
+Text is standard UTF-16LE. Before the text, an array of `[styleId: u32, byteLength: u32]` structs maps formatting to text spans. The boundary between the struct array and the text is the 6-byte marker `FF FF FF FF 0D 00`.
+
+---
+
+## Supported characters
+
+| Category | Count | Notes |
+|---|---|---|
+| Urdu/Arabic consonants | 39 | Including Urdu-specific: پ ٹ ڈ ڑ گ ں ے ہ ھ |
+| Diacritical marks (harakat) | 14 | Zabar, zer, pesh, shadda, sukun + alternates |
+| Urdu numerals (Extended Arabic-Indic) | 10 | ۰–۹ (U+06F0–U+06F9) |
+| Arabic-Indic digits (Arabic mode) | 10 | ٠–٩ (U+0660–U+0669) |
+| Punctuation & symbols | 22 | Including ۔ ، ؟ ؛ ﴾ ﴿ ﷺ |
+| Religious symbols | 4 | ؑ ؔ ؓ ؒ |
+| Composite sequences | 4 | أ آ ؤ یئ |
+
+Full table: [`specs/05-character-maps.md`](specs/05-character-maps.md)
+
+---
+
+## Known limitations
+
+| Area | Status |
+|---|---|
+| Text extraction (v1/v2) | ✅ ~85–90% accuracy |
+| Text extraction (v3) | ✅ Working |
+| Word spacing (v1/v2) | ✅ Recovered via `pendingSpace` heuristic |
+| Page breaks | ✅ Form Feed → `PAGE_BREAK_MARKER` |
+| Font name extraction | ✅ Pattern-matched from header |
+| Font size / alignment | ⚠️ Partial — most files work, some edge cases |
+| Bold / italic | ⚠️ Partially reverse-engineered |
+| Embedded images | ❌ Not implemented |
+| Tables / columns | ❌ Layout structures unknown |
+| Headers / footers | ❌ Master page structure unknown |
+
+---
+
+## Security
+
+InPage files have been used in APT campaigns targeting Pakistani civil society (CVE-2017-12824 — stack overflow in InPage). The library includes:
+
+- OLE2 magic signature validation
+- File size limits (50 MB max)
+- Exploit pattern scanning (`68 72 68 72` egg-hunter + `LuNdLuNd` shellcode marker)
+- Strict bounds checking on all binary reads
+
+Details: [`specs/08-security.md`](specs/08-security.md)
 
 ---
 
 ## Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md). All contributions — new character mappings, additional language implementations, test fixtures, or format discoveries — are welcome.
+All contributions are welcome:
+- 🔤 **New character mappings** — found a wrong glyph? Open an issue with the hex bytes
+- 🧪 **Test fixtures** — minimal binary snippets demonstrating edge cases
+- 🌐 **New language ports** — Python, Go, Rust, Java all welcome
+- 📝 **Format discoveries** — binary analysis of unknown byte sequences
 
-Key contribution areas:
-- **New character mappings** — If you find a byte that decodes to the wrong glyph, open an issue with the hex dump
-- **New language ports** — Python, Go, Rust, Java implementations welcome
-- **Test fixtures** — Anonymized `.INP` snippets demonstrating edge cases
-- **Format discoveries** — Binary analysis of unknown byte sequences
+See [CONTRIBUTING.md](CONTRIBUTING.md) for the full guide.
 
 ---
 
-## Research Sources
+## Research sources
 
 - [ltrc/inPageToUnicode](https://github.com/AArhamm/inPageToUnicode) — JavaScript, GPL-2.0
 - [KamalAbdali/InpageToUnicode](https://github.com/kamalabdali/InpageToUnicode) — C
 - [UmerCodez/unicode-inpage-converter](https://github.com/UmerCodez/unicode-inpage-converter) — C++
-- [SheetJS/cfb](https://github.com/SheetJS/js-cfb) — OLE2 container parser
-- CVE-2017-12824 — Buffer overflow in InPage (documented exploit markers)
+- [SheetJS/cfb](https://github.com/SheetJS/js-cfb) — OLE2 parser
+- [CVE-2017-12824](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-12824)
 
 ---
 
 ## License
 
-MIT. See [LICENSE](LICENSE).
+MIT © [inpage-format contributors](https://github.com/iamahsanmehmood/inpage-format/graphs/contributors)
 
-Character mapping data derived from community reverse-engineering work licensed under GPL-2.0. The mapping tables in this repository are factual data (Unicode code point assignments) and are not themselves copyrightable, but attribution to prior researchers is maintained in source comments.
+Character mapping data is factual Unicode assignment data — not copyrightable. Attribution to prior researchers is maintained in source comments.

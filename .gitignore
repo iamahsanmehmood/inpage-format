@@ -1,0 +1,25 @@
+# JavaScript
+lib/javascript/node_modules/
+lib/javascript/dist/
+lib/javascript/coverage/
+
+# .NET
+lib/dotnet/**/bin/
+lib/dotnet/**/obj/
+lib/dotnet/**/*.user
+lib/dotnet/nupkg/
+*.nupkg
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.idea/
+.vscode/
+*.suo
+*.sln.docstates
+
+# Test outputs
+TestResults/

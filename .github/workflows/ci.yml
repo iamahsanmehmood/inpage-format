@@ -1,0 +1,52 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test-javascript:
+    name: JavaScript (Node ${{ matrix.node }})
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [18, 20, 22]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+          cache: npm
+          cache-dependency-path: lib/javascript/package-lock.json
+      - name: Install dependencies
+        run: npm ci
+        working-directory: lib/javascript
+      - name: Type-check
+        run: npm run typecheck
+        working-directory: lib/javascript
+      - name: Run tests
+        run: npm test
+        working-directory: lib/javascript
+
+  test-dotnet:
+    name: .NET (${{ matrix.dotnet }})
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        dotnet: ['9.0']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: ${{ matrix.dotnet }}
+      - name: Restore
+        run: dotnet restore
+        working-directory: lib/dotnet
+      - name: Build
+        run: dotnet build --no-restore -c Release
+        working-directory: lib/dotnet
+      - name: Run tests
+        run: dotnet test --no-build -c Release --verbosity normal
+        working-directory: lib/dotnet
