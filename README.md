@@ -207,6 +207,17 @@ Details: [`specs/08-security.md`](specs/08-security.md)
 
 ---
 
+## Used in the wild
+
+| Project | Description |
+|---|---|
+| [ViewAnyFile](https://viewanyfile.app/) | Browser-based file viewer supporting dozens of formats |
+| [InPage Viewer](https://viewanyfile.app/view/inp) | Online InPage `.INP` file viewer — open any InPage document directly in the browser, no install needed |
+
+*Built something with this library? Open a PR to add it here.*
+
+---
+
 ## Contributing
 
 All contributions are welcome:
