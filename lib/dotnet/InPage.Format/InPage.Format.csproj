@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <LangVersion>12</LangVersion>
+    <RootNamespace>InPage.Format</RootNamespace>
+    <AssemblyName>InPage.Format</AssemblyName>
+    <Version>1.0.0</Version>
+    <Description>Reference C# library for decoding InPage .INP binary files</Description>
+    <Authors>inpage-format contributors</Authors>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <!-- Suppress: CS1591 missing XML doc on enum members, CS1587 misplaced XML doc on record params -->
+    <NoWarn>1591;1587</NoWarn>
+  </PropertyGroup>
+
+</Project>

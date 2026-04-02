@@ -1,0 +1,13 @@
+C:\Users\Admin\Documents\Devs\inpage-format\lib\dotnet\InPage.Format\obj\Debug\net8.0\InPage.Format.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\Documents\Devs\inpage-format\lib\dotnet\InPage.Format\obj\Debug\net8.0\InPage.Format.AssemblyInfoInputs.cache
+C:\Users\Admin\Documents\Devs\inpage-format\lib\dotnet\InPage.Format\obj\Debug\net8.0\InPage.Format.AssemblyInfo.cs
+C:\Users\Admin\Documents\Devs\inpage-format\lib\dotnet\InPage.Format\obj\Debug\net8.0\InPage.Format.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Documents\Devs\inpage-format\lib\dotnet\InPage.Format\obj\Debug\net8.0\InPage.Format.xml
+C:\Users\Admin\Documents\Devs\inpage-format\lib\dotnet\InPage.Format\bin\Debug\net8.0\InPage.Format.deps.json
+C:\Users\Admin\Documents\Devs\inpage-format\lib\dotnet\InPage.Format\bin\Debug\net8.0\InPage.Format.dll
+C:\Users\Admin\Documents\Devs\inpage-format\lib\dotnet\InPage.Format\bin\Debug\net8.0\InPage.Format.pdb
+C:\Users\Admin\Documents\Devs\inpage-format\lib\dotnet\InPage.Format\bin\Debug\net8.0\InPage.Format.xml
+C:\Users\Admin\Documents\Devs\inpage-format\lib\dotnet\InPage.Format\obj\Debug\net8.0\InPage.Format.dll
+C:\Users\Admin\Documents\Devs\inpage-format\lib\dotnet\InPage.Format\obj\Debug\net8.0\refint\InPage.Format.dll
+C:\Users\Admin\Documents\Devs\inpage-format\lib\dotnet\InPage.Format\obj\Debug\net8.0\InPage.Format.pdb
+C:\Users\Admin\Documents\Devs\inpage-format\lib\dotnet\InPage.Format\obj\Debug\net8.0\ref\InPage.Format.dll

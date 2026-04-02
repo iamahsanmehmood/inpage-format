@@ -1,0 +1,127 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>InPage.Format</name>
+    </assembly>
+    <members>
+        <member name="T:InPage.Format.CharMaps">
+            <summary>
+            InPage → Unicode character mapping tables for v1/v2 (0x04-prefix encoding).
+            See specs/05-character-maps.md for full documentation.
+            </summary>
+        </member>
+        <member name="F:InPage.Format.CharMaps.CompositeSequences">
+            <summary>
+            Composite sequences — MUST be matched BEFORE single-byte mappings.
+            Key: (baseByte, modifierByte). Value: Unicode string.
+            </summary>
+        </member>
+        <member name="F:InPage.Format.CharMaps.Urdu">
+            <summary>
+            Urdu byte-index → Unicode mapping table.
+            The index is the second byte of a 04 XX pair.
+            </summary>
+        </member>
+        <member name="F:InPage.Format.CharMaps.ArabicOverrides">
+            <summary>
+            Arabic-mode overrides. In Arabic mode, these take precedence over Urdu.
+            See specs/05-character-maps.md for the override table.
+            </summary>
+        </member>
+        <member name="M:InPage.Format.CharMaps.IsUrduCodePoint(System.Int32)">
+            <summary>Returns true if the given Unicode code point is an Urdu/Arabic character.</summary>
+        </member>
+        <member name="M:InPage.Format.CharMaps.IsUrduChar(System.Char)">
+            <summary>Returns true if the given character is Urdu/Arabic.</summary>
+        </member>
+        <member name="T:InPage.Format.InPageDecoder">
+             <summary>
+             InPage text decoder for v1/v2 (0x04-prefix) and v3 (UTF-16LE) streams.
+            
+             The caller must extract the raw content stream bytes from the OLE2/CFB
+             container (using OpenMcdf or similar) before calling these methods.
+             See specs/03-encoding-legacy.md and specs/04-encoding-v3.md.
+             </summary>
+        </member>
+        <member name="F:InPage.Format.InPageDecoder.PageBreakMarker">
+            <summary>Sentinel string emitted in place of a Form Feed page break byte.</summary>
+        </member>
+        <member name="M:InPage.Format.InPageDecoder.DecodeV1V2(System.ReadOnlySpan{System.Byte})">
+             <summary>
+             Decode an InPage v1.x or v2.x content stream (0x04-prefix encoding).
+            
+             Word spacing recovery: non-0x04 control bytes between character
+             sequences set a pendingSpace flag so the next decoded character is
+             preceded by a space — recovering word boundaries stored implicitly.
+             </summary>
+        </member>
+        <member name="M:InPage.Format.InPageDecoder.DecodeV3(System.ReadOnlySpan{System.Byte})">
+             <summary>
+             Decode an InPage v3 content stream (UTF-16LE with struct array).
+            
+             Locates the FF FF FF FF 0D 00 boundary marker, reads 8-byte
+             [styleId, byteLength] structs backward from it, then iterates the
+             text spans decoding UTF-16LE with CR paragraph breaks.
+             </summary>
+        </member>
+        <member name="T:InPage.Format.Models.DecodeResult">
+            <summary>
+            Result of decoding an InPage content stream (before noise filtering).
+            </summary>
+        </member>
+        <member name="M:InPage.Format.Models.DecodeResult.#ctor(System.Collections.Generic.IReadOnlyList{System.String},System.Collections.Generic.IReadOnlyList{System.Int32},System.Collections.Generic.IReadOnlyList{InPage.Format.Models.ParagraphMeta})">
+            <summary>
+            Result of decoding an InPage content stream (before noise filtering).
+            </summary>
+        </member>
+        <member name="T:InPage.Format.Models.InPageResult">
+            <summary>
+            Result of the full parse + filter pipeline. Ready for display.
+            </summary>
+        </member>
+        <member name="M:InPage.Format.Models.InPageResult.#ctor(System.Int32,System.Collections.Generic.IReadOnlyList{System.String},System.Collections.Generic.IReadOnlyList{InPage.Format.Models.ParagraphMeta},System.Int32)">
+            <summary>
+            Result of the full parse + filter pipeline. Ready for display.
+            </summary>
+        </member>
+        <member name="T:InPage.Format.Models.ParagraphMeta">
+            <summary>
+            Metadata for a single decoded paragraph.
+            </summary>
+        </member>
+        <member name="M:InPage.Format.Models.ParagraphMeta.#ctor(System.String,System.Int32,System.Int32,System.Boolean,System.Nullable{System.Int32})">
+            <summary>
+            Metadata for a single decoded paragraph.
+            </summary>
+        </member>
+        <member name="T:InPage.Format.Models.Alignment">
+            <summary>Text alignment values.</summary>
+        </member>
+        <member name="T:InPage.Format.Models.StyleProperties">
+            <summary>
+            Formatting properties for a paragraph or character run.
+            </summary>
+        </member>
+        <member name="M:InPage.Format.Models.StyleProperties.#ctor(System.Int32,System.Int32,System.Boolean,System.Boolean,System.Boolean,System.Int32,InPage.Format.Models.Alignment,System.Double,System.Nullable{System.Double},System.Nullable{System.Double},System.Nullable{System.Double})">
+            <summary>
+            Formatting properties for a paragraph or character run.
+            </summary>
+        </member>
+        <member name="T:InPage.Format.TextFilter">
+             <summary>
+             3-layer noise filter for decoded InPage paragraphs.
+            
+             Separates actual Urdu content from binary metadata garbage that InPage
+             streams mix with text. See specs/07-text-filtering.md for full documentation.
+             </summary>
+        </member>
+        <member name="M:InPage.Format.TextFilter.FilterWithMeta(System.Collections.Generic.IReadOnlyList{System.String},System.Collections.Generic.IReadOnlyList{InPage.Format.Models.ParagraphMeta})">
+            <summary>
+            Apply all filters and return cleaned paragraphs with metadata.
+            </summary>
+        </member>
+        <member name="M:InPage.Format.TextFilter.Filter(System.Collections.Generic.IReadOnlyList{System.String})">
+            <summary>Apply all filters and return cleaned paragraphs.</summary>
+        </member>
+    </members>
+</doc>
