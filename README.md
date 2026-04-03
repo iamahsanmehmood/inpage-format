@@ -45,7 +45,8 @@ inpage-format/
 │   ├── 05-character-maps.md        110+ character mappings
 │   ├── 06-formatting-structures.md Style/font/alignment binary structures
 │   ├── 07-text-filtering.md        Noise separation algorithm
-│   └── 08-security.md              CVE-2017-12824 & threat model
+│   ├── 08-security.md              CVE-2017-12824 & threat model
+│   └── 09-write-feasibility.md     Feasibility: generating .INP files
 │
 ├── 📦  lib/javascript/     TypeScript library — Node.js & browser
 ├── 📦  lib/dotnet/         C# library — .NET 9+
