@@ -1,12 +1,11 @@
 name: Publish
 
-# Triggered when a GitHub Release is published.
+# Triggered when a GitHub Release is published, or manually from the Actions tab.
 # Requires repository secrets:
 #   NPM_TOKEN   — from npmjs.com → Access Tokens → Automation token
 #   NUGET_TOKEN — from nuget.org → API Keys
 #
 # Add them at: Settings → Secrets and variables → Actions → New repository secret
-# Until secrets are added, this workflow will be skipped gracefully.
 
 on:
   release:
@@ -17,8 +16,6 @@ jobs:
   publish-npm:
     name: Publish to npm
     runs-on: ubuntu-latest
-    # Only run if the NPM_TOKEN secret exists
-    if: ${{ secrets.NPM_TOKEN != '' }}
     permissions:
       contents: read
       id-token: write
@@ -45,8 +42,6 @@ jobs:
   publish-nuget:
     name: Publish to NuGet
     runs-on: ubuntu-latest
-    # Only run if the NUGET_TOKEN secret exists
-    if: ${{ secrets.NUGET_TOKEN != '' }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-dotnet@v4
