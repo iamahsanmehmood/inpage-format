@@ -183,8 +183,12 @@ export function decodeV3(data: Uint8Array): DecodeResult {
     // Fallback: scan from beginning
     console.warn('[decodeV3] Boundary marker not found at 0x1000+, scanning from start...');
     if (!findMarker(0, Math.min(data.length, 0x1000))) {
-      console.warn('[decodeV3] Boundary marker not found. Returning empty document.');
-      return { paragraphs: [], pageBreakIndices: [], paragraphMeta: [] };
+      // Last resort: some V3 variants (e.g. multi-page InPage 3.x) store text
+      // directly without the struct-array/boundary-marker format. In this case
+      // scan the entire stream for the largest contiguous UTF-16LE Urdu text
+      // region and decode it as plain paragraphs.
+      console.warn('[decodeV3] Boundary marker not found. Trying direct UTF-16LE scan fallback...');
+      return decodeV3Fallback(data);
     }
   }
 
@@ -266,5 +270,86 @@ export function decodeV3(data: Uint8Array): DecodeResult {
     });
   }
 
+  return { paragraphs, pageBreakIndices, paragraphMeta };
+}
+
+// ─── V3 Fallback Decoder ──────────────────────────────────────────────────────
+
+/**
+ * Fallback for V3 files that lack the standard FF FF FF FF 0D 00 boundary marker.
+ *
+ * Some InPage 3.x variants store text in multiple page-sized blocks rather than
+ * a single linearised stream. Strategy: find all contiguous UTF-16LE Urdu/Arabic
+ * text regions (≥ 20 consecutive Urdu code points), decode each as plain
+ * paragraphs split on CR, and concatenate the results.
+ *
+ * Yields text without style metadata but prevents blank output.
+ */
+function decodeV3Fallback(data: Uint8Array): DecodeResult {
+  const paragraphs: string[] = [];
+  const pageBreakIndices: number[] = [];
+  const paragraphMeta: ParagraphMeta[] = [];
+
+  const view = new DataView(data.buffer, data.byteOffset, data.byteLength);
+  const MIN_RUN = 20; // min consecutive Urdu chars to qualify as real text
+
+  let runStart = -1;
+  let urduCount = 0;
+
+  const flushRegion = (from: number, to: number) => {
+    let current = '';
+    let paraStart = from;
+
+    for (let i = from; i < to - 1; i += 2) {
+      const cp = view.getUint16(i, true);
+
+      if (cp === 0x000D) {
+        const trimmed = current.trim();
+        if (trimmed) {
+          paragraphs.push(trimmed);
+          paragraphMeta.push({ text: trimmed, startOffset: paraStart, endOffset: i, isPageBreak: false });
+        }
+        current = '';
+        paraStart = i + 2;
+        continue;
+      }
+
+      // Skip embedded control records
+      const isCtrl = (cp >= 0x0001 && cp <= 0x001F && cp !== 0x0009 && cp !== 0x000A) || cp === 0x007E;
+      if (isCtrl && i + 3 < to) {
+        const recLen = view.getUint16(i + 2, true);
+        i += 2 + recLen;
+        continue;
+      }
+
+      if (cp >= 0x0020 || cp === 0x0009 || cp === 0x000A) {
+        current += String.fromCharCode(cp);
+      }
+    }
+
+    const trimmed = current.trim();
+    if (trimmed) {
+      paragraphs.push(trimmed);
+      paragraphMeta.push({ text: trimmed, startOffset: paraStart, endOffset: to, isPageBreak: false });
+    }
+  };
+
+  for (let i = 0; i < data.length - 1; i += 2) {
+    const cp = view.getUint16(i, true);
+    const isUrduLike = (cp >= 0x0600 && cp <= 0x06FF) || cp === 0x0020 || cp === 0x000D || cp === 0x0009;
+
+    if (isUrduLike) {
+      if (runStart === -1) runStart = i;
+      if (cp >= 0x0600 && cp <= 0x06FF) urduCount++;
+    } else {
+      if (runStart !== -1 && urduCount >= MIN_RUN) flushRegion(runStart, i);
+      runStart = -1;
+      urduCount = 0;
+    }
+  }
+
+  if (runStart !== -1 && urduCount >= MIN_RUN) flushRegion(runStart, data.length);
+
+  console.warn(`[decodeV3Fallback] Recovered ${paragraphs.length} paragraphs via direct UTF-16LE scan.`);
   return { paragraphs, pageBreakIndices, paragraphMeta };
 }

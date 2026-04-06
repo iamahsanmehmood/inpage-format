@@ -43,3 +43,19 @@ export type {
   StyleProperties,
   Alignment,
 } from './types.js';
+
+export {
+  extractDocumentFormat,
+  extractFontTable,
+  extractColorPalette,
+  parseDefaultStyle,
+  extractParagraphFormats,
+  getStyleForOffset,
+  mapFontToWeb,
+} from './format-extractor.js';
+export type {
+  FontEntry,
+  ColorEntry,
+  ParagraphFormat,
+  DocumentFormat,
+} from './format-extractor.js';
