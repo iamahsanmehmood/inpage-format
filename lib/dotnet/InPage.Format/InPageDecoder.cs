@@ -152,8 +152,11 @@ public static class InPageDecoder
         int arrayEnd = FindBoundaryMarker(data);
         if (arrayEnd < 0)
         {
-            Console.Error.WriteLine("[DecodeV3] Boundary marker not found. Returning empty document.");
-            return new DecodeResult(paragraphs, pageBreakIndices, meta);
+            // Last resort: some V3 variants (e.g. multi-page InPage 3.x) store text
+            // directly without the struct-array/boundary-marker format. Scan the
+            // entire stream for contiguous UTF-16LE Urdu regions and decode them.
+            Console.Error.WriteLine("[DecodeV3] Boundary marker not found. Trying direct UTF-16LE scan fallback...");
+            return DecodeV3Fallback(data);
         }
 
         int textStart = arrayEnd + 6;
@@ -264,4 +267,100 @@ public static class InPageDecoder
         (data[offset + 1] << 8) |
         (data[offset + 2] << 16) |
         (data[offset + 3] << 24);
+
+    // ─── V3 Fallback ─────────────────────────────────────────────────────────
+
+    /// <summary>
+    /// Fallback decoder for V3 files that lack the standard FF FF FF FF 0D 00
+    /// boundary marker.
+    ///
+    /// Some InPage 3.x variants store text in multiple page-sized blocks rather
+    /// than a single linearised stream. Strategy: find all contiguous UTF-16LE
+    /// Urdu/Arabic text regions (≥ 20 consecutive Urdu code points), decode each
+    /// as plain paragraphs split on CR, and concatenate the results.
+    ///
+    /// Yields text without style metadata but prevents blank output.
+    /// </summary>
+    private static DecodeResult DecodeV3Fallback(ReadOnlySpan<byte> data)
+    {
+        const int MinRun = 20; // min consecutive Urdu chars to qualify as real text
+
+        var paragraphs = new List<string>();
+        var pageBreakIndices = new List<int>();
+        var meta = new List<ParagraphMeta>();
+
+        // Collect Urdu run boundaries first (can't capture span in local fn)
+        var runs = new List<(int From, int To)>();
+        int runStart = -1;
+        int urduCount = 0;
+
+        for (int i = 0; i < data.Length - 1; i += 2)
+        {
+            ushort cp = (ushort)(data[i] | (data[i + 1] << 8));
+            bool isUrduLike = (cp >= 0x0600 && cp <= 0x06FF) || cp == 0x0020 || cp == 0x000D || cp == 0x0009;
+
+            if (isUrduLike)
+            {
+                if (runStart == -1) runStart = i;
+                if (cp >= 0x0600 && cp <= 0x06FF) urduCount++;
+            }
+            else
+            {
+                if (runStart >= 0 && urduCount >= MinRun)
+                    runs.Add((runStart, i));
+                runStart = -1;
+                urduCount = 0;
+            }
+        }
+
+        if (runStart >= 0 && urduCount >= MinRun)
+            runs.Add((runStart, data.Length));
+
+        // Decode each qualifying run
+        foreach (var (from, to) in runs)
+        {
+            var current = new StringBuilder();
+            int paraStart = from;
+
+            for (int i = from; i < to - 1; i += 2)
+            {
+                ushort cp = (ushort)(data[i] | (data[i + 1] << 8));
+
+                if (cp == 0x000D)
+                {
+                    var trimmed = current.ToString().Trim();
+                    if (trimmed.Length > 0)
+                    {
+                        paragraphs.Add(trimmed);
+                        meta.Add(new ParagraphMeta(trimmed, paraStart, i, false));
+                    }
+                    current.Clear();
+                    paraStart = i + 2;
+                    continue;
+                }
+
+                // Skip embedded control records
+                bool isCtrl = (cp >= 0x0001 && cp <= 0x001F && cp != 0x0009 && cp != 0x000A) || cp == 0x007E;
+                if (isCtrl && i + 3 < to)
+                {
+                    int recLen = data[i + 2] | (data[i + 3] << 8);
+                    i += 2 + recLen;
+                    continue;
+                }
+
+                if (cp >= 0x0020 || cp == 0x0009 || cp == 0x000A)
+                    current.Append((char)cp);
+            }
+
+            var tail = current.ToString().Trim();
+            if (tail.Length > 0)
+            {
+                paragraphs.Add(tail);
+                meta.Add(new ParagraphMeta(tail, paraStart, to, false));
+            }
+        }
+
+        Console.Error.WriteLine($"[DecodeV3Fallback] Recovered {paragraphs.Count} paragraphs via direct UTF-16LE scan.");
+        return new DecodeResult(paragraphs, pageBreakIndices, meta);
+    }
 }

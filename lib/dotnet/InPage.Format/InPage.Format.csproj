@@ -14,7 +14,7 @@
 
     <!-- NuGet package metadata -->
     <PackageId>InPage.Format</PackageId>
-    <Version>1.0.0</Version>
+    <Version>1.1.0</Version>
     <Authors>inpage-format contributors</Authors>
     <Description>Decode InPage .INP Urdu/Arabic word processor files — C# library with character maps, v1/v2/v3 decoder, and noise filter. Reference implementation of the reverse-engineered InPage binary format.</Description>
     <PackageTags>inpage;urdu;arabic;nastaliq;inp;binary;decoder;pakistan;unicode;ole2</PackageTags>
@@ -24,7 +24,7 @@
     <RepositoryType>git</RepositoryType>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <PackageReleaseNotes>Initial release — complete InPage v1/v2/v3 decoder with 54 unit tests.</PackageReleaseNotes>
+    <PackageReleaseNotes>v1.1.0 — Add FormatExtractor (font table, color palette, default style, per-paragraph overrides) and DecodeV3Fallback for files without boundary marker.</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>

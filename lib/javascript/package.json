@@ -1,6 +1,6 @@
 {
   "name": "inpage-format",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Decode InPage .INP Urdu/Arabic word processor files — TypeScript library with character maps, v1/v2/v3 decoder, and noise filter",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
