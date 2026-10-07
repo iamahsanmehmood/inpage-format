@@ -1,0 +1,16 @@
+test_directory_allows_shared_boundaries (test_legacy_structures.ReaderTests.test_directory_allows_shared_boundaries) ... ok
+test_directory_rejects_descending_or_outside_offsets (test_legacy_structures.ReaderTests.test_directory_rejects_descending_or_outside_offsets) ... ok
+test_directory_rejects_truncation (test_legacy_structures.ReaderTests.test_directory_rejects_truncation) ... ok
+test_directory_rejects_wrong_eof (test_legacy_structures.ReaderTests.test_directory_rejects_wrong_eof) ... ok
+test_directory_rejects_wrong_id (test_legacy_structures.ReaderTests.test_directory_rejects_wrong_id) ... ok
+test_font_length_rejects_nonmultiple_and_truncation (test_legacy_structures.ReaderTests.test_font_length_rejects_nonmultiple_and_truncation) ... ok
+test_font_name_requires_bounded_terminator (test_legacy_structures.ReaderTests.test_font_name_requires_bounded_terminator) ... ok
+test_font_names_do_not_guess_nonascii_encoding (test_legacy_structures.ReaderTests.test_font_names_do_not_guess_nonascii_encoding) ... ok
+test_font_slots_preserve_empty_duplicate_and_tail_bytes (test_legacy_structures.ReaderTests.test_font_slots_preserve_empty_duplicate_and_tail_bytes) ... ok
+test_sized_field (test_legacy_structures.ReaderTests.test_sized_field) ... ok
+test_sized_field_rejects_truncation_and_negative_offset (test_legacy_structures.ReaderTests.test_sized_field_rejects_truncation_and_negative_offset) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.000s
+
+OK

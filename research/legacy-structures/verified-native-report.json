@@ -1,0 +1,206 @@
+{
+  "status": "verified_against_pinned_native_sample",
+  "file_sha256": "50281cde396c92d23d1b49e2196b8ac8ae4f9988ea8a01603779549a342cd0cf",
+  "stream_sha256": "ea3152468b88562feca7296789051c7a83eb9e8c90a5186fd9516b86e14d280d",
+  "stream": "InPage100",
+  "stream_size": 87175,
+  "directory": [
+    {
+      "id": 0,
+      "entry_offset": 16,
+      "target": 6150
+    },
+    {
+      "id": 1,
+      "entry_offset": 22,
+      "target": 6150
+    },
+    {
+      "id": 2,
+      "entry_offset": 28,
+      "target": 6150
+    },
+    {
+      "id": 3,
+      "entry_offset": 34,
+      "target": 6172
+    },
+    {
+      "id": 4,
+      "entry_offset": 40,
+      "target": 87123
+    },
+    {
+      "id": 5,
+      "entry_offset": 46,
+      "target": 87123
+    },
+    {
+      "id": 6,
+      "entry_offset": 52,
+      "target": 87175
+    }
+  ],
+  "font_table": {
+    "length_offset": 7413,
+    "byte_length": 972,
+    "record_width": 54,
+    "end_offset": 8389,
+    "slots": [
+      {
+        "slot": 0,
+        "offset": 7417,
+        "name_ascii": "Noori Nastaliq",
+        "name_bytes_hex": "4e6f6f7269204e617374616c6971",
+        "name_area_hex": "4e6f6f7269204e617374616c6971000000000000000000000000000000000000",
+        "opaque_suffix_hex": "5f000100000000000000000000000000000000000000"
+      },
+      {
+        "slot": 1,
+        "offset": 7471,
+        "name_ascii": "Naskh",
+        "name_bytes_hex": "4e61736b68",
+        "name_area_hex": "4e61736b68000100000000000000000000000000000000000000000000000000",
+        "opaque_suffix_hex": "5f020100000000000000000000000000000000000000"
+      },
+      {
+        "slot": 2,
+        "offset": 7525,
+        "name_ascii": "Firoz",
+        "name_bytes_hex": "4669726f7a",
+        "name_area_hex": "4669726f7a004368617261637465720078014502000000000000000000000000",
+        "opaque_suffix_hex": "5f020100000000000000000000000000000000000000"
+      },
+      {
+        "slot": 3,
+        "offset": 7579,
+        "name_ascii": "Arial",
+        "name_bytes_hex": "417269616c",
+        "name_area_hex": "417269616c00e504160068100d01382d4502780145020000c642020000000000",
+        "opaque_suffix_hex": "00000100000000000000000000000000000000000000"
+      },
+      {
+        "slot": 4,
+        "offset": 7633,
+        "name_ascii": "Simplified Arabic",
+        "name_bytes_hex": "53696d706c696669656420417261626963",
+        "name_area_hex": "53696d706c6966696564204172616269630000000000837f00000000847f0100",
+        "opaque_suffix_hex": "b2000100000000000000000000000000000000000000"
+      },
+      {
+        "slot": 5,
+        "offset": 7687,
+        "name_ascii": "ZoharSindhi",
+        "name_bytes_hex": "5a6f68617253696e646869",
+        "name_area_hex": "5a6f68617253696e6468690045024805450201008e7f000000008f7f00000000",
+        "opaque_suffix_hex": "60000100000000000000000000000000000000000000"
+      },
+      {
+        "slot": 6,
+        "offset": 7741,
+        "name_ascii": "Sadaf",
+        "name_bytes_hex": "5361646166",
+        "name_area_hex": "536164616600204e617374616c69710000000000000000000000000000000000",
+        "opaque_suffix_hex": "5f020100000000000000000000000000000000000000"
+      },
+      {
+        "slot": 7,
+        "offset": 7795,
+        "name_ascii": "",
+        "name_bytes_hex": "",
+        "name_area_hex": "00617361617220426f6c6400426f6c6400027801450200000000000000000000",
+        "opaque_suffix_hex": "5f020100000000000000000000000000000000000000"
+      },
+      {
+        "slot": 8,
+        "offset": 7849,
+        "name_ascii": "",
+        "name_bytes_hex": "",
+        "name_area_hex": "007261642041726162696320426f6c6400000000000000000000000000000000",
+        "opaque_suffix_hex": "5f020100000000000000000000000000000000000000"
+      },
+      {
+        "slot": 9,
+        "offset": 7903,
+        "name_ascii": "",
+        "name_bytes_hex": "",
+        "name_area_hex": "0072616420417261626963004502780145020000000000000000000000000000",
+        "opaque_suffix_hex": "5f020100000000000000000000000000000000000000"
+      },
+      {
+        "slot": 10,
+        "offset": 7957,
+        "name_ascii": "",
+        "name_bytes_hex": "",
+        "name_area_hex": "00617361617220436f6e746f7572000250054502000000000000000000000000",
+        "opaque_suffix_hex": "5f020100000000000000000000000000000000000000"
+      },
+      {
+        "slot": 11,
+        "offset": 8011,
+        "name_ascii": "",
+        "name_bytes_hex": "",
+        "name_area_hex": "006f75716100205065727369616e000545021805450200000000000000000000",
+        "opaque_suffix_hex": "5f020100000000000000000000000000000000000000"
+      },
+      {
+        "slot": 12,
+        "offset": 8065,
+        "name_ascii": "",
+        "name_bytes_hex": "",
+        "name_area_hex": "006977616e690000e8044502e804450200000000000000000000000000000000",
+        "opaque_suffix_hex": "5f020100000000000000000000000000000000000000"
+      },
+      {
+        "slot": 13,
+        "offset": 8119,
+        "name_ascii": "",
+        "name_bytes_hex": "",
+        "name_area_hex": "0068616c696200100000b0044502b00445020000000000000000000000000000",
+        "opaque_suffix_hex": "5f020100000000000000000000000000000000000000"
+      },
+      {
+        "slot": 14,
+        "offset": 8173,
+        "name_ascii": "",
+        "name_bytes_hex": "",
+        "name_area_hex": "006168616c006000001000007804450278044502000000000000000000000000",
+        "opaque_suffix_hex": "5f020100000000000000000000000000000000000000"
+      },
+      {
+        "slot": 15,
+        "offset": 8227,
+        "name_ascii": "",
+        "name_bytes_hex": "",
+        "name_area_hex": "006f757161005900670000100000400445024004450200000000000000000000",
+        "opaque_suffix_hex": "5f020100000000000000000000000000000000000000"
+      },
+      {
+        "slot": 16,
+        "offset": 8281,
+        "name_ascii": "",
+        "name_bytes_hex": "",
+        "name_area_hex": "0061686f7269204e617374616c69710000000000000000000000000000000000",
+        "opaque_suffix_hex": "00000000000000000000000000000000000000000000"
+      },
+      {
+        "slot": 17,
+        "offset": 8335,
+        "name_ascii": "",
+        "name_bytes_hex": "",
+        "name_area_hex": "0061736b680000100000d8034502d80345020000000000000000000000000000",
+        "opaque_suffix_hex": "5f020100000000000000000000000000000000000000"
+      }
+    ]
+  },
+  "sized_field": {
+    "offset": 7272,
+    "tag_hex": "e67f",
+    "byte_length": 7,
+    "payload_hex": "4e6f726d616c00",
+    "end_offset": 7285
+  },
+  "exact_excerpts_checked": 5,
+  "native_rendering_or_resave": "not_performed",
+  "coverage": "one public document; structure observations, not a general format specification"
+}

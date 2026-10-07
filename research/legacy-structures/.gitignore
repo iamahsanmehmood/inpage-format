@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+story.inp
+sample.inp
+reproduced-report.json
+node_modules/

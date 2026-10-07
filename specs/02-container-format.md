@@ -120,3 +120,10 @@ if (cf.RootStorage.TryGetStorage("InPage300") != null ||
 var stream = cf.RootStorage.GetStream(streamName);
 byte[] content = stream.GetData();
 ```
+
+## Observed legacy stream structures
+
+A pinned public `InPage100` sample contains seven directory-like entries
+at logical-stream offset 16, including an EOF offset. See
+[the byte evidence and scoped interpretation](10-legacy-structure-evidence.md).
+Section IDs and applicability to other variants remain unverified.

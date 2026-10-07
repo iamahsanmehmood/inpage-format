@@ -1,0 +1,49 @@
+{
+  "native_input_count": 1,
+  "local_pinned_input_verified": true,
+  "fresh_pinned_download_verified": true,
+  "download_and_local_reports_identical": true,
+  "unit_tests_passed": 11,
+  "unit_tests_are_synthetic": true,
+  "font_slot_roundtrip_bytes": 972,
+  "preserved_slots": 18,
+  "nonempty_name_slots": 7,
+  "upstream_font_count": 0,
+  "tamper_checks": [
+    {
+      "change": "directory_id",
+      "offset": 16,
+      "rejected": true,
+      "reason": "Stream SHA-256 mismatch"
+    },
+    {
+      "change": "document_label",
+      "offset": 6150,
+      "rejected": true,
+      "reason": "Stream SHA-256 mismatch"
+    },
+    {
+      "change": "field_length",
+      "offset": 7274,
+      "rejected": true,
+      "reason": "Stream SHA-256 mismatch"
+    },
+    {
+      "change": "font_length",
+      "offset": 7413,
+      "rejected": true,
+      "reason": "Stream SHA-256 mismatch"
+    },
+    {
+      "change": "font_name",
+      "offset": 7417,
+      "rejected": true,
+      "reason": "Stream SHA-256 mismatch"
+    }
+  ],
+  "native_rendering_or_resave": "not_performed",
+  "producer_build": "unknown",
+  "independent_document_count": 1,
+  "patch_applied_in_disposable_checkout": true,
+  "tests_and_native_verifier_passed_from_applied_patch": true
+}

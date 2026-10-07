@@ -1,0 +1,12 @@
+{
+  "upstream_repository": "https://github.com/iamahsanmehmood/inpage-format",
+  "upstream_commit": "45105c60b35b59a69b7bbdee7d76bf539abf9968",
+  "source_path": "lib/javascript/src/format-extractor.ts",
+  "source_sha256": "3afcbc12f8860e8f24576e6eb9bceeb8c7e2df8228059434736b4aa1d21366bf",
+  "stream_sha256": "ea3152468b88562feca7296789051c7a83eb9e8c90a5186fd9516b86e14d280d",
+  "function": "extractFontTable",
+  "upstream_font_count": 0,
+  "observed_nonempty_ascii_slots": 7,
+  "observed_total_slots": 18,
+  "source_hash_normalization": "CRLF to LF"
+}

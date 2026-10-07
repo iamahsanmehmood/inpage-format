@@ -140,6 +140,13 @@ After each control code, parse up to 48 bytes as `XX 7E YY YY` (paragraph) and `
 
 ## Font Table
 
+> **Legacy counterexample:** The pinned `InPage100` sample documented in
+> [the new byte evidence](10-legacy-structure-evidence.md) uses single-byte
+> NUL-terminated font-name areas in 54-byte slots, not the UTF-16LE
+> heuristic below. The existing font reader returns zero fonts for that
+> document. Do not generalize the following name/index description to
+> all legacy files; native font references remain unverified.
+
 Fonts are stored as **UTF-16LE null-terminated strings** in the header region. Detection uses pattern matching against known InPage font name prefixes:
 
 Known font name patterns:
