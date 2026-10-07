@@ -1,0 +1,16 @@
+{
+  "recorded_on": "2026-10-07",
+  "fixture_creator": "ImadC9",
+  "creator_identified_producing_installation": "InPage2014 Khattat Professionals",
+  "creator_confirmed": "Naskh baseline font; native files saved and reopened correctly",
+  "about_display": "INPAGE 2014",
+  "executable_filename": "Inpage.exe",
+  "executable_sha256": "ce5ee2e79d0bf2425e5d5707af736675648048c98f520b9195c70b50ffbee59e",
+  "file_version_resource": "1.0.0.1",
+  "product_version_resource": "2.0.0.0",
+  "product_name_resource": "INPAGEMFC Application",
+  "document_stream": "InPage100",
+  "interpretation": "2014 is the observed branding; version resources are recorded literally. This modified installation is not established as an official InPage 3 release.",
+  "native_reopen_verification": "Reported by the creator; the verifier does not run InPage.",
+  "about_observation": "Text transcribed from Help > About on the recorded date; no application executable is redistributed."
+}

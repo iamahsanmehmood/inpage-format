@@ -1,0 +1,247 @@
+{
+  "upstream_commit": "45105c60b35b59a69b7bbdee7d76bf539abf9968",
+  "source_sha256": "3afcbc12f8860e8f24576e6eb9bceeb8c7e2df8228059434736b4aa1d21366bf",
+  "source_hash_normalization": "CRLF to LF",
+  "results": [
+    {
+      "file": "01-baseline.inp",
+      "stream_sha256": "4fcfd86d08f95aeeaedb5b8ee5d06f997745e71f52d7f395ce5264da2dad0f8c",
+      "font_count": 0,
+      "default_style": {
+        "fontSize": 18,
+        "fontIndex": 1,
+        "bold": true,
+        "italic": false,
+        "underline": false,
+        "colorIndex": 0,
+        "alignment": "center",
+        "lineSpacing": 2.2
+      },
+      "paragraph_format_count": 0
+    },
+    {
+      "file": "02-control-a.inp",
+      "stream_sha256": "7e3223d049c4b5a8b759b2c1574f696944716bc0ad088d3c4befd3c39da4a116",
+      "font_count": 0,
+      "default_style": {
+        "fontSize": 18,
+        "fontIndex": 1,
+        "bold": true,
+        "italic": false,
+        "underline": false,
+        "colorIndex": 0,
+        "alignment": "center",
+        "lineSpacing": 2.2
+      },
+      "paragraph_format_count": 0
+    },
+    {
+      "file": "03-control-b.inp",
+      "stream_sha256": "7e3223d049c4b5a8b759b2c1574f696944716bc0ad088d3c4befd3c39da4a116",
+      "font_count": 0,
+      "default_style": {
+        "fontSize": 18,
+        "fontIndex": 1,
+        "bold": true,
+        "italic": false,
+        "underline": false,
+        "colorIndex": 0,
+        "alignment": "center",
+        "lineSpacing": 2.2
+      },
+      "paragraph_format_count": 0
+    },
+    {
+      "file": "04-control-c.inp",
+      "stream_sha256": "7e3223d049c4b5a8b759b2c1574f696944716bc0ad088d3c4befd3c39da4a116",
+      "font_count": 0,
+      "default_style": {
+        "fontSize": 18,
+        "fontIndex": 1,
+        "bold": true,
+        "italic": false,
+        "underline": false,
+        "colorIndex": 0,
+        "alignment": "center",
+        "lineSpacing": 2.2
+      },
+      "paragraph_format_count": 0
+    },
+    {
+      "file": "05-size-11.inp",
+      "stream_sha256": "123358250cfcae8e67327f633db93a4a5cc5c43a0b803c8be18b8f66b9635e1c",
+      "font_count": 0,
+      "default_style": {
+        "fontSize": 18,
+        "fontIndex": 1,
+        "bold": true,
+        "italic": false,
+        "underline": false,
+        "colorIndex": 0,
+        "alignment": "center",
+        "lineSpacing": 2.2
+      },
+      "paragraph_format_count": 0
+    },
+    {
+      "file": "06-size-11_5.inp",
+      "stream_sha256": "5f9ea48fd9c362d9a521392221f853bfaab33c0d9fbc17af02a9e86edfb7c6d6",
+      "font_count": 0,
+      "default_style": {
+        "fontSize": 18,
+        "fontIndex": 1,
+        "bold": true,
+        "italic": false,
+        "underline": false,
+        "colorIndex": 0,
+        "alignment": "center",
+        "lineSpacing": 2.2
+      },
+      "paragraph_format_count": 0
+    },
+    {
+      "file": "07-size-14.inp",
+      "stream_sha256": "e57d576119b351f97c7d494780373e2e460c6226f837be7e8e374b9fe3c8cb1e",
+      "font_count": 0,
+      "default_style": {
+        "fontSize": 18,
+        "fontIndex": 1,
+        "bold": true,
+        "italic": false,
+        "underline": false,
+        "colorIndex": 0,
+        "alignment": "center",
+        "lineSpacing": 2.2
+      },
+      "paragraph_format_count": 0
+    },
+    {
+      "file": "08-size-24.inp",
+      "stream_sha256": "fcb28f25b4fd70644c1a06b0f2bb53f94291bdaf3ecbae0f55923604b24fd175",
+      "font_count": 0,
+      "default_style": {
+        "fontSize": 18,
+        "fontIndex": 1,
+        "bold": true,
+        "italic": false,
+        "underline": false,
+        "colorIndex": 0,
+        "alignment": "center",
+        "lineSpacing": 2.2
+      },
+      "paragraph_format_count": 0
+    },
+    {
+      "file": "09-bold.inp",
+      "stream_sha256": "7fd989e5ff8bde1e344a0347ef8852b8637a39066c8e77bdcd1199abb52cdcad",
+      "font_count": 0,
+      "default_style": {
+        "fontSize": 18,
+        "fontIndex": 1,
+        "bold": true,
+        "italic": false,
+        "underline": false,
+        "colorIndex": 0,
+        "alignment": "center",
+        "lineSpacing": 2.2
+      },
+      "paragraph_format_count": 0
+    },
+    {
+      "file": "10-italic.inp",
+      "stream_sha256": "2f52a02e624344546aac624cf255fcc652d4e6ce597369d9b191756069ae26e7",
+      "font_count": 0,
+      "default_style": {
+        "fontSize": 18,
+        "fontIndex": 1,
+        "bold": true,
+        "italic": false,
+        "underline": false,
+        "colorIndex": 0,
+        "alignment": "center",
+        "lineSpacing": 2.2
+      },
+      "paragraph_format_count": 0
+    },
+    {
+      "file": "11-bold-italic.inp",
+      "stream_sha256": "bfb97dff5828ac9bbdc67eeee863e47c77db504e22fdb2e045604f4ab312e9e5",
+      "font_count": 0,
+      "default_style": {
+        "fontSize": 18,
+        "fontIndex": 1,
+        "bold": true,
+        "italic": false,
+        "underline": false,
+        "colorIndex": 0,
+        "alignment": "center",
+        "lineSpacing": 2.2
+      },
+      "paragraph_format_count": 0
+    },
+    {
+      "file": "12-align-left.inp",
+      "stream_sha256": "82d8dfb15799567910ff169c778ebf15b1685f65c31c1bd27f0054a36e50fd2c",
+      "font_count": 0,
+      "default_style": {
+        "fontSize": 18,
+        "fontIndex": 1,
+        "bold": true,
+        "italic": false,
+        "underline": false,
+        "colorIndex": 0,
+        "alignment": "center",
+        "lineSpacing": 2.2
+      },
+      "paragraph_format_count": 0
+    },
+    {
+      "file": "13-align-center.inp",
+      "stream_sha256": "1f60c18cdc743fab9b8c6fd3c9a6f19be524f3acc6bf06182a95cb0746c46200",
+      "font_count": 0,
+      "default_style": {
+        "fontSize": 18,
+        "fontIndex": 1,
+        "bold": true,
+        "italic": false,
+        "underline": false,
+        "colorIndex": 0,
+        "alignment": "center",
+        "lineSpacing": 2.2
+      },
+      "paragraph_format_count": 0
+    },
+    {
+      "file": "14-align-justify.inp",
+      "stream_sha256": "3f46a0352d05f93d9980f0459db0b7b2aba30573bde510b7b7154b8c147ac241",
+      "font_count": 0,
+      "default_style": {
+        "fontSize": 18,
+        "fontIndex": 1,
+        "bold": true,
+        "italic": false,
+        "underline": false,
+        "colorIndex": 0,
+        "alignment": "center",
+        "lineSpacing": 2.2
+      },
+      "paragraph_format_count": 0
+    },
+    {
+      "file": "15-font-noori.inp",
+      "stream_sha256": "2f89054028d313427892b57ffdbad69246bbea4106a5e6b0589a2c816cfd0d12",
+      "font_count": 0,
+      "default_style": {
+        "fontSize": 18,
+        "fontIndex": 1,
+        "bold": true,
+        "italic": false,
+        "underline": false,
+        "colorIndex": 0,
+        "alignment": "center",
+        "lineSpacing": 2.2
+      },
+      "paragraph_format_count": 0
+    }
+  ]
+}

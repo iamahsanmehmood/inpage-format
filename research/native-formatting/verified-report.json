@@ -1,0 +1,708 @@
+{
+  "passed": true,
+  "native_files_checked": 15,
+  "reference_sample": "02-control-a.inp",
+  "baseline_comparison": {
+    "baseline": "01-baseline.inp",
+    "reference": "02-control-a.inp",
+    "text_identical": true,
+    "formatting_records_identical": true,
+    "default_header_identical": true,
+    "font_slots_identical": true,
+    "streams": [
+      {
+        "stream": "DocumentInfo",
+        "baseline_sha256": "5bc633d52bc4345c9cc4ea7cf49422a85a9fe401faf3239ef72b53aa0dd667ee",
+        "reference_sha256": "5bc633d52bc4345c9cc4ea7cf49422a85a9fe401faf3239ef72b53aa0dd667ee",
+        "changed_intervals": []
+      },
+      {
+        "stream": "InPage100",
+        "baseline_sha256": "4fcfd86d08f95aeeaedb5b8ee5d06f997745e71f52d7f395ce5264da2dad0f8c",
+        "reference_sha256": "7e3223d049c4b5a8b759b2c1574f696944716bc0ad088d3c4befd3c39da4a116",
+        "changed_intervals": [
+          {
+            "offset": 1298,
+            "length": 1,
+            "baseline_hex": "ae",
+            "reference_hex": "12"
+          },
+          {
+            "offset": 1376,
+            "length": 1,
+            "baseline_hex": "b1",
+            "reference_hex": "15"
+          },
+          {
+            "offset": 1702,
+            "length": 1,
+            "baseline_hex": "c8",
+            "reference_hex": "2c"
+          },
+          {
+            "offset": 1708,
+            "length": 1,
+            "baseline_hex": "ca",
+            "reference_hex": "2e"
+          },
+          {
+            "offset": 1718,
+            "length": 1,
+            "baseline_hex": "c7",
+            "reference_hex": "2b"
+          },
+          {
+            "offset": 1728,
+            "length": 1,
+            "baseline_hex": "b9",
+            "reference_hex": "1d"
+          },
+          {
+            "offset": 2054,
+            "length": 1,
+            "baseline_hex": "c9",
+            "reference_hex": "2d"
+          },
+          {
+            "offset": 3975,
+            "length": 2,
+            "baseline_hex": "f012",
+            "reference_hex": "de10"
+          },
+          {
+            "offset": 3978,
+            "length": 1,
+            "baseline_hex": "6e",
+            "reference_hex": "8a"
+          },
+          {
+            "offset": 4191,
+            "length": 2,
+            "baseline_hex": "b0e8",
+            "reference_hex": "a8e9"
+          }
+        ]
+      }
+    ],
+    "changed_field_meanings": "unresolved; these bytes are not classified as formatting or volatile"
+  },
+  "control_streams_identical": true,
+  "independent_held_out_document_checked": false,
+  "general_inline_ownership_verified": false,
+  "body_and_cr_ownership": "inferred single-paragraph profile only",
+  "malformed_input_checks": [
+    {
+      "case": "invalid directory id",
+      "rejected": true
+    },
+    {
+      "case": "out-of-bounds directory target",
+      "rejected": true
+    },
+    {
+      "case": "unverified default-style profile",
+      "rejected": true
+    },
+    {
+      "case": "text length escapes story section",
+      "rejected": true
+    },
+    {
+      "case": "unknown body property width",
+      "rejected": true
+    },
+    {
+      "case": "unverified span ownership profile",
+      "rejected": true
+    },
+    {
+      "case": "truncated full stream",
+      "rejected": true
+    }
+  ],
+  "native_reopen": "reported successful by sample author; not independently replayed",
+  "samples": [
+    {
+      "file": "01-baseline.inp",
+      "file_sha256": "559557b31c90cb3b7d925c5a2d944e2ec5d0489143c36232315e047350bc3835",
+      "stream_sha256": "4fcfd86d08f95aeeaedb5b8ee5d06f997745e71f52d7f395ce5264da2dad0f8c",
+      "text_sha256": "8feb9c68070e95bc0eb6824420b7cfdea2cc95eab0e260300b620662c5b237af",
+      "format_entry_spans": [
+        1,
+        42,
+        1
+      ],
+      "body_style": {
+        "font_slot": 1,
+        "font": "Naskh",
+        "size_units": 22000,
+        "font_size_pt": 11.0,
+        "weight": 400,
+        "bold": false,
+        "italic": false,
+        "alignment": "right",
+        "explicit": {
+          "urdu_font_slot": 1,
+          "size_units": 22000
+        }
+      },
+      "trailing_cr_style": {
+        "font_slot": 0,
+        "font": "Noori Nastaliq",
+        "size_units": 24000,
+        "font_size_pt": 12.0,
+        "weight": 400,
+        "bold": false,
+        "italic": false,
+        "alignment": "right",
+        "explicit": {}
+      },
+      "passed": true
+    },
+    {
+      "file": "02-control-a.inp",
+      "file_sha256": "cb03a91dff50915a20b82b02b4472c9459a6928fc839bf31b356136022dc6f61",
+      "stream_sha256": "7e3223d049c4b5a8b759b2c1574f696944716bc0ad088d3c4befd3c39da4a116",
+      "text_sha256": "8feb9c68070e95bc0eb6824420b7cfdea2cc95eab0e260300b620662c5b237af",
+      "format_entry_spans": [
+        1,
+        42,
+        1
+      ],
+      "body_style": {
+        "font_slot": 1,
+        "font": "Naskh",
+        "size_units": 22000,
+        "font_size_pt": 11.0,
+        "weight": 400,
+        "bold": false,
+        "italic": false,
+        "alignment": "right",
+        "explicit": {
+          "urdu_font_slot": 1,
+          "size_units": 22000
+        }
+      },
+      "trailing_cr_style": {
+        "font_slot": 0,
+        "font": "Noori Nastaliq",
+        "size_units": 24000,
+        "font_size_pt": 12.0,
+        "weight": 400,
+        "bold": false,
+        "italic": false,
+        "alignment": "right",
+        "explicit": {}
+      },
+      "passed": true
+    },
+    {
+      "file": "03-control-b.inp",
+      "file_sha256": "2933e92bf7087db7b69ef05b6e494d960b9c556052b248452518d6c91c7a3eb0",
+      "stream_sha256": "7e3223d049c4b5a8b759b2c1574f696944716bc0ad088d3c4befd3c39da4a116",
+      "text_sha256": "8feb9c68070e95bc0eb6824420b7cfdea2cc95eab0e260300b620662c5b237af",
+      "format_entry_spans": [
+        1,
+        42,
+        1
+      ],
+      "body_style": {
+        "font_slot": 1,
+        "font": "Naskh",
+        "size_units": 22000,
+        "font_size_pt": 11.0,
+        "weight": 400,
+        "bold": false,
+        "italic": false,
+        "alignment": "right",
+        "explicit": {
+          "urdu_font_slot": 1,
+          "size_units": 22000
+        }
+      },
+      "trailing_cr_style": {
+        "font_slot": 0,
+        "font": "Noori Nastaliq",
+        "size_units": 24000,
+        "font_size_pt": 12.0,
+        "weight": 400,
+        "bold": false,
+        "italic": false,
+        "alignment": "right",
+        "explicit": {}
+      },
+      "passed": true
+    },
+    {
+      "file": "04-control-c.inp",
+      "file_sha256": "4c1281bcb0ebebed0b412585c14071a03e98c4b33510a1a091e650189a3edd3a",
+      "stream_sha256": "7e3223d049c4b5a8b759b2c1574f696944716bc0ad088d3c4befd3c39da4a116",
+      "text_sha256": "8feb9c68070e95bc0eb6824420b7cfdea2cc95eab0e260300b620662c5b237af",
+      "format_entry_spans": [
+        1,
+        42,
+        1
+      ],
+      "body_style": {
+        "font_slot": 1,
+        "font": "Naskh",
+        "size_units": 22000,
+        "font_size_pt": 11.0,
+        "weight": 400,
+        "bold": false,
+        "italic": false,
+        "alignment": "right",
+        "explicit": {
+          "urdu_font_slot": 1,
+          "size_units": 22000
+        }
+      },
+      "trailing_cr_style": {
+        "font_slot": 0,
+        "font": "Noori Nastaliq",
+        "size_units": 24000,
+        "font_size_pt": 12.0,
+        "weight": 400,
+        "bold": false,
+        "italic": false,
+        "alignment": "right",
+        "explicit": {}
+      },
+      "passed": true
+    },
+    {
+      "file": "05-size-11.inp",
+      "file_sha256": "7af4f867ecfd3205c62ece797b1b026a5f16a3aa7776f56c54d313a714d750de",
+      "stream_sha256": "123358250cfcae8e67327f633db93a4a5cc5c43a0b803c8be18b8f66b9635e1c",
+      "text_sha256": "8feb9c68070e95bc0eb6824420b7cfdea2cc95eab0e260300b620662c5b237af",
+      "format_entry_spans": [
+        1,
+        42,
+        1
+      ],
+      "body_style": {
+        "font_slot": 1,
+        "font": "Naskh",
+        "size_units": 22000,
+        "font_size_pt": 11.0,
+        "weight": 400,
+        "bold": false,
+        "italic": false,
+        "alignment": "right",
+        "explicit": {
+          "urdu_font_slot": 1,
+          "size_units": 22000
+        }
+      },
+      "trailing_cr_style": {
+        "font_slot": 0,
+        "font": "Noori Nastaliq",
+        "size_units": 22000,
+        "font_size_pt": 11.0,
+        "weight": 400,
+        "bold": false,
+        "italic": false,
+        "alignment": "right",
+        "explicit": {
+          "size_units": 22000
+        }
+      },
+      "passed": true
+    },
+    {
+      "file": "06-size-11_5.inp",
+      "file_sha256": "ca117e1f88a49fec1dc37bf670d1b47b3694ae8358cef001cb6d31df50a08f73",
+      "stream_sha256": "5f9ea48fd9c362d9a521392221f853bfaab33c0d9fbc17af02a9e86edfb7c6d6",
+      "text_sha256": "8feb9c68070e95bc0eb6824420b7cfdea2cc95eab0e260300b620662c5b237af",
+      "format_entry_spans": [
+        1,
+        42,
+        1
+      ],
+      "body_style": {
+        "font_slot": 1,
+        "font": "Naskh",
+        "size_units": 23000,
+        "font_size_pt": 11.5,
+        "weight": 400,
+        "bold": false,
+        "italic": false,
+        "alignment": "right",
+        "explicit": {
+          "urdu_font_slot": 1,
+          "size_units": 23000
+        }
+      },
+      "trailing_cr_style": {
+        "font_slot": 0,
+        "font": "Noori Nastaliq",
+        "size_units": 23000,
+        "font_size_pt": 11.5,
+        "weight": 400,
+        "bold": false,
+        "italic": false,
+        "alignment": "right",
+        "explicit": {
+          "size_units": 23000
+        }
+      },
+      "passed": true
+    },
+    {
+      "file": "07-size-14.inp",
+      "file_sha256": "b8dc33b8308927f1ff88a70919e2810e8092d242bd18334414d830cac89ef978",
+      "stream_sha256": "e57d576119b351f97c7d494780373e2e460c6226f837be7e8e374b9fe3c8cb1e",
+      "text_sha256": "8feb9c68070e95bc0eb6824420b7cfdea2cc95eab0e260300b620662c5b237af",
+      "format_entry_spans": [
+        1,
+        42,
+        1
+      ],
+      "body_style": {
+        "font_slot": 1,
+        "font": "Naskh",
+        "size_units": 28000,
+        "font_size_pt": 14.0,
+        "weight": 400,
+        "bold": false,
+        "italic": false,
+        "alignment": "right",
+        "explicit": {
+          "urdu_font_slot": 1,
+          "size_units": 28000
+        }
+      },
+      "trailing_cr_style": {
+        "font_slot": 0,
+        "font": "Noori Nastaliq",
+        "size_units": 28000,
+        "font_size_pt": 14.0,
+        "weight": 400,
+        "bold": false,
+        "italic": false,
+        "alignment": "right",
+        "explicit": {
+          "size_units": 28000
+        }
+      },
+      "passed": true
+    },
+    {
+      "file": "08-size-24.inp",
+      "file_sha256": "bd0e2404c719f7f1ce88f8e5efaf91351481e3c9bc7f65039227b304a5eccf8d",
+      "stream_sha256": "fcb28f25b4fd70644c1a06b0f2bb53f94291bdaf3ecbae0f55923604b24fd175",
+      "text_sha256": "8feb9c68070e95bc0eb6824420b7cfdea2cc95eab0e260300b620662c5b237af",
+      "format_entry_spans": [
+        1,
+        42,
+        1
+      ],
+      "body_style": {
+        "font_slot": 1,
+        "font": "Naskh",
+        "size_units": 48000,
+        "font_size_pt": 24.0,
+        "weight": 400,
+        "bold": false,
+        "italic": false,
+        "alignment": "right",
+        "explicit": {
+          "urdu_font_slot": 1,
+          "size_units": 48000
+        }
+      },
+      "trailing_cr_style": {
+        "font_slot": 0,
+        "font": "Noori Nastaliq",
+        "size_units": 48000,
+        "font_size_pt": 24.0,
+        "weight": 400,
+        "bold": false,
+        "italic": false,
+        "alignment": "right",
+        "explicit": {
+          "size_units": 48000
+        }
+      },
+      "passed": true
+    },
+    {
+      "file": "09-bold.inp",
+      "file_sha256": "ae23130e4ab685d1077bb9ede6d8131f92cfc7244e6204babfa1e259ae619215",
+      "stream_sha256": "7fd989e5ff8bde1e344a0347ef8852b8637a39066c8e77bdcd1199abb52cdcad",
+      "text_sha256": "8feb9c68070e95bc0eb6824420b7cfdea2cc95eab0e260300b620662c5b237af",
+      "format_entry_spans": [
+        1,
+        42,
+        1
+      ],
+      "body_style": {
+        "font_slot": 1,
+        "font": "Naskh",
+        "size_units": 22000,
+        "font_size_pt": 11.0,
+        "weight": 700,
+        "bold": true,
+        "italic": false,
+        "alignment": "right",
+        "explicit": {
+          "urdu_font_slot": 1,
+          "size_units": 22000,
+          "weight": 700
+        }
+      },
+      "trailing_cr_style": {
+        "font_slot": 0,
+        "font": "Noori Nastaliq",
+        "size_units": 24000,
+        "font_size_pt": 12.0,
+        "weight": 700,
+        "bold": true,
+        "italic": false,
+        "alignment": "right",
+        "explicit": {
+          "weight": 700
+        }
+      },
+      "passed": true
+    },
+    {
+      "file": "10-italic.inp",
+      "file_sha256": "e3259918d6e41bb5ecacdaf0ff555f2237d1b77712594a65dffbeb5e9beb99a3",
+      "stream_sha256": "2f52a02e624344546aac624cf255fcc652d4e6ce597369d9b191756069ae26e7",
+      "text_sha256": "8feb9c68070e95bc0eb6824420b7cfdea2cc95eab0e260300b620662c5b237af",
+      "format_entry_spans": [
+        1,
+        42,
+        1
+      ],
+      "body_style": {
+        "font_slot": 1,
+        "font": "Naskh",
+        "size_units": 22000,
+        "font_size_pt": 11.0,
+        "weight": 400,
+        "bold": false,
+        "italic": true,
+        "alignment": "right",
+        "explicit": {
+          "urdu_font_slot": 1,
+          "size_units": 22000,
+          "italic": 1
+        }
+      },
+      "trailing_cr_style": {
+        "font_slot": 0,
+        "font": "Noori Nastaliq",
+        "size_units": 24000,
+        "font_size_pt": 12.0,
+        "weight": 400,
+        "bold": false,
+        "italic": true,
+        "alignment": "right",
+        "explicit": {
+          "italic": 1
+        }
+      },
+      "passed": true
+    },
+    {
+      "file": "11-bold-italic.inp",
+      "file_sha256": "1a3d5ac0953ebab65470f4e29186806d820cbfa5b90d102f42d59ef258557af2",
+      "stream_sha256": "bfb97dff5828ac9bbdc67eeee863e47c77db504e22fdb2e045604f4ab312e9e5",
+      "text_sha256": "8feb9c68070e95bc0eb6824420b7cfdea2cc95eab0e260300b620662c5b237af",
+      "format_entry_spans": [
+        1,
+        42,
+        1
+      ],
+      "body_style": {
+        "font_slot": 1,
+        "font": "Naskh",
+        "size_units": 22000,
+        "font_size_pt": 11.0,
+        "weight": 700,
+        "bold": true,
+        "italic": true,
+        "alignment": "right",
+        "explicit": {
+          "urdu_font_slot": 1,
+          "size_units": 22000,
+          "weight": 700,
+          "italic": 1
+        }
+      },
+      "trailing_cr_style": {
+        "font_slot": 0,
+        "font": "Noori Nastaliq",
+        "size_units": 24000,
+        "font_size_pt": 12.0,
+        "weight": 700,
+        "bold": true,
+        "italic": true,
+        "alignment": "right",
+        "explicit": {
+          "weight": 700,
+          "italic": 1
+        }
+      },
+      "passed": true
+    },
+    {
+      "file": "12-align-left.inp",
+      "file_sha256": "bf144fe0a5f49383f34b4a8ebb2aee39440e3501822c0df0e8160a76b777b1b0",
+      "stream_sha256": "82d8dfb15799567910ff169c778ebf15b1685f65c31c1bd27f0054a36e50fd2c",
+      "text_sha256": "8feb9c68070e95bc0eb6824420b7cfdea2cc95eab0e260300b620662c5b237af",
+      "format_entry_spans": [
+        1,
+        42,
+        1
+      ],
+      "body_style": {
+        "font_slot": 1,
+        "font": "Naskh",
+        "size_units": 22000,
+        "font_size_pt": 11.0,
+        "weight": 400,
+        "bold": false,
+        "italic": false,
+        "alignment": "left",
+        "explicit": {
+          "urdu_font_slot": 1,
+          "size_units": 22000,
+          "alignment": 0
+        }
+      },
+      "trailing_cr_style": {
+        "font_slot": 0,
+        "font": "Noori Nastaliq",
+        "size_units": 24000,
+        "font_size_pt": 12.0,
+        "weight": 400,
+        "bold": false,
+        "italic": false,
+        "alignment": "left",
+        "explicit": {
+          "alignment": 0
+        }
+      },
+      "passed": true
+    },
+    {
+      "file": "13-align-center.inp",
+      "file_sha256": "c92fdf7f63065764a73ce4922af7b79a17b5d68fe7cb937a34bb3da5b78015c8",
+      "stream_sha256": "1f60c18cdc743fab9b8c6fd3c9a6f19be524f3acc6bf06182a95cb0746c46200",
+      "text_sha256": "8feb9c68070e95bc0eb6824420b7cfdea2cc95eab0e260300b620662c5b237af",
+      "format_entry_spans": [
+        1,
+        42,
+        1
+      ],
+      "body_style": {
+        "font_slot": 1,
+        "font": "Naskh",
+        "size_units": 22000,
+        "font_size_pt": 11.0,
+        "weight": 400,
+        "bold": false,
+        "italic": false,
+        "alignment": "center",
+        "explicit": {
+          "urdu_font_slot": 1,
+          "size_units": 22000,
+          "alignment": 2
+        }
+      },
+      "trailing_cr_style": {
+        "font_slot": 0,
+        "font": "Noori Nastaliq",
+        "size_units": 24000,
+        "font_size_pt": 12.0,
+        "weight": 400,
+        "bold": false,
+        "italic": false,
+        "alignment": "center",
+        "explicit": {
+          "alignment": 2
+        }
+      },
+      "passed": true
+    },
+    {
+      "file": "14-align-justify.inp",
+      "file_sha256": "b2139942208b07fe021ec9224855a56f7078873c68ce01912963ee9816116821",
+      "stream_sha256": "3f46a0352d05f93d9980f0459db0b7b2aba30573bde510b7b7154b8c147ac241",
+      "text_sha256": "8feb9c68070e95bc0eb6824420b7cfdea2cc95eab0e260300b620662c5b237af",
+      "format_entry_spans": [
+        1,
+        42,
+        1
+      ],
+      "body_style": {
+        "font_slot": 1,
+        "font": "Naskh",
+        "size_units": 22000,
+        "font_size_pt": 11.0,
+        "weight": 400,
+        "bold": false,
+        "italic": false,
+        "alignment": "justify",
+        "explicit": {
+          "urdu_font_slot": 1,
+          "size_units": 22000,
+          "alignment": 4
+        }
+      },
+      "trailing_cr_style": {
+        "font_slot": 0,
+        "font": "Noori Nastaliq",
+        "size_units": 24000,
+        "font_size_pt": 12.0,
+        "weight": 400,
+        "bold": false,
+        "italic": false,
+        "alignment": "justify",
+        "explicit": {
+          "alignment": 4
+        }
+      },
+      "passed": true
+    },
+    {
+      "file": "15-font-noori.inp",
+      "file_sha256": "9d3050e933708176d54a56765e719205c245aa34570ad99f123f12440e9062d0",
+      "stream_sha256": "2f89054028d313427892b57ffdbad69246bbea4106a5e6b0589a2c816cfd0d12",
+      "text_sha256": "8feb9c68070e95bc0eb6824420b7cfdea2cc95eab0e260300b620662c5b237af",
+      "format_entry_spans": [
+        1,
+        42,
+        1
+      ],
+      "body_style": {
+        "font_slot": 0,
+        "font": "Noori Nastaliq",
+        "size_units": 22000,
+        "font_size_pt": 11.0,
+        "weight": 400,
+        "bold": false,
+        "italic": false,
+        "alignment": "right",
+        "explicit": {
+          "size_units": 22000
+        }
+      },
+      "trailing_cr_style": {
+        "font_slot": 0,
+        "font": "Noori Nastaliq",
+        "size_units": 24000,
+        "font_size_pt": 12.0,
+        "weight": 400,
+        "bold": false,
+        "italic": false,
+        "alignment": "right",
+        "explicit": {}
+      },
+      "passed": true
+    }
+  ]
+}

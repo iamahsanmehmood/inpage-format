@@ -1,0 +1,1137 @@
+{
+  "schema": 1,
+  "research_date": "2026-10-07",
+  "provenance": {
+    "fixture_creator": "ImadC9",
+    "producing_installation": "InPage2014 Khattat Professionals; identified by the creator",
+    "producer_record": "provenance/producer.json",
+    "about_display": "INPAGE 2014",
+    "file_version_resource": "1.0.0.1",
+    "product_version_resource": "2.0.0.0",
+    "native_save_reopen": "confirmed by the creator; not replayed by the verifier",
+    "semantic_labels": "experiment filenames; original formatting UI state not captured",
+    "all_text_selection": "inferred from span coverage",
+    "baseline_size": "11 pt in the saved body; header default 12 pt",
+    "fixture_licence": "repository MIT licence; redistribution authorized by the creator"
+  },
+  "controls": [
+    "02-control-a.inp",
+    "03-control-b.inp",
+    "04-control-c.inp"
+  ],
+  "scope": "single paragraph with whole-body formatting; no independent inline or multi-paragraph validation",
+  "samples": [
+    {
+      "file": "01-baseline.inp",
+      "file_size": 9216,
+      "file_sha256": "559557b31c90cb3b7d925c5a2d944e2ec5d0489143c36232315e047350bc3835",
+      "stream_size": 4249,
+      "stream_sha256": "4fcfd86d08f95aeeaedb5b8ee5d06f997745e71f52d7f395ce5264da2dad0f8c",
+      "text_offset": 3671,
+      "text_byte_length": 43,
+      "default_header": {
+        "offset": 2164,
+        "length": 1041,
+        "sha256": "27c6364cca7e5646a0a27131feaebd260f69ce7559731453335cfe73cb2c3d55"
+      },
+      "expected_body": {
+        "font": "Naskh",
+        "font_size_pt": 11.0,
+        "weight": 400,
+        "bold": false,
+        "italic": false,
+        "alignment": "right"
+      },
+      "excerpts": [
+        {
+          "role": "format-entry",
+          "offset": 3723,
+          "hex": "010000000c000000010006000000800000000000"
+        },
+        {
+          "role": "format-entry",
+          "offset": 3743,
+          "hex": "2a0000001600000001001000000080000000000002020100007ff0550000"
+        },
+        {
+          "role": "format-entry",
+          "offset": 3773,
+          "hex": "010000000c000000010006000000800000000000"
+        },
+        {
+          "role": "default-urdu_font_slot",
+          "offset": 2188,
+          "hex": "02020000"
+        },
+        {
+          "role": "default-size_units",
+          "offset": 2284,
+          "hex": "007fc05d0000"
+        },
+        {
+          "role": "default-weight",
+          "offset": 2294,
+          "hex": "027f9001"
+        },
+        {
+          "role": "default-italic",
+          "offset": 2298,
+          "hex": "037f0000"
+        },
+        {
+          "role": "default-alignment",
+          "offset": 2402,
+          "hex": "807f0100"
+        },
+        {
+          "role": "font-slot-0",
+          "offset": 3333,
+          "hex": "4e6f6f7269204e617374616c697100"
+        },
+        {
+          "role": "font-slot-1",
+          "offset": 3387,
+          "hex": "4e61736b6800"
+        }
+      ]
+    },
+    {
+      "file": "02-control-a.inp",
+      "file_size": 9216,
+      "file_sha256": "cb03a91dff50915a20b82b02b4472c9459a6928fc839bf31b356136022dc6f61",
+      "stream_size": 4249,
+      "stream_sha256": "7e3223d049c4b5a8b759b2c1574f696944716bc0ad088d3c4befd3c39da4a116",
+      "text_offset": 3671,
+      "text_byte_length": 43,
+      "default_header": {
+        "offset": 2164,
+        "length": 1041,
+        "sha256": "27c6364cca7e5646a0a27131feaebd260f69ce7559731453335cfe73cb2c3d55"
+      },
+      "expected_body": {
+        "font": "Naskh",
+        "font_size_pt": 11.0,
+        "weight": 400,
+        "bold": false,
+        "italic": false,
+        "alignment": "right"
+      },
+      "excerpts": [
+        {
+          "role": "format-entry",
+          "offset": 3723,
+          "hex": "010000000c000000010006000000800000000000"
+        },
+        {
+          "role": "format-entry",
+          "offset": 3743,
+          "hex": "2a0000001600000001001000000080000000000002020100007ff0550000"
+        },
+        {
+          "role": "format-entry",
+          "offset": 3773,
+          "hex": "010000000c000000010006000000800000000000"
+        },
+        {
+          "role": "default-urdu_font_slot",
+          "offset": 2188,
+          "hex": "02020000"
+        },
+        {
+          "role": "default-size_units",
+          "offset": 2284,
+          "hex": "007fc05d0000"
+        },
+        {
+          "role": "default-weight",
+          "offset": 2294,
+          "hex": "027f9001"
+        },
+        {
+          "role": "default-italic",
+          "offset": 2298,
+          "hex": "037f0000"
+        },
+        {
+          "role": "default-alignment",
+          "offset": 2402,
+          "hex": "807f0100"
+        },
+        {
+          "role": "font-slot-0",
+          "offset": 3333,
+          "hex": "4e6f6f7269204e617374616c697100"
+        },
+        {
+          "role": "font-slot-1",
+          "offset": 3387,
+          "hex": "4e61736b6800"
+        }
+      ]
+    },
+    {
+      "file": "03-control-b.inp",
+      "file_size": 9216,
+      "file_sha256": "2933e92bf7087db7b69ef05b6e494d960b9c556052b248452518d6c91c7a3eb0",
+      "stream_size": 4249,
+      "stream_sha256": "7e3223d049c4b5a8b759b2c1574f696944716bc0ad088d3c4befd3c39da4a116",
+      "text_offset": 3671,
+      "text_byte_length": 43,
+      "default_header": {
+        "offset": 2164,
+        "length": 1041,
+        "sha256": "27c6364cca7e5646a0a27131feaebd260f69ce7559731453335cfe73cb2c3d55"
+      },
+      "expected_body": {
+        "font": "Naskh",
+        "font_size_pt": 11.0,
+        "weight": 400,
+        "bold": false,
+        "italic": false,
+        "alignment": "right"
+      },
+      "excerpts": [
+        {
+          "role": "format-entry",
+          "offset": 3723,
+          "hex": "010000000c000000010006000000800000000000"
+        },
+        {
+          "role": "format-entry",
+          "offset": 3743,
+          "hex": "2a0000001600000001001000000080000000000002020100007ff0550000"
+        },
+        {
+          "role": "format-entry",
+          "offset": 3773,
+          "hex": "010000000c000000010006000000800000000000"
+        },
+        {
+          "role": "default-urdu_font_slot",
+          "offset": 2188,
+          "hex": "02020000"
+        },
+        {
+          "role": "default-size_units",
+          "offset": 2284,
+          "hex": "007fc05d0000"
+        },
+        {
+          "role": "default-weight",
+          "offset": 2294,
+          "hex": "027f9001"
+        },
+        {
+          "role": "default-italic",
+          "offset": 2298,
+          "hex": "037f0000"
+        },
+        {
+          "role": "default-alignment",
+          "offset": 2402,
+          "hex": "807f0100"
+        },
+        {
+          "role": "font-slot-0",
+          "offset": 3333,
+          "hex": "4e6f6f7269204e617374616c697100"
+        },
+        {
+          "role": "font-slot-1",
+          "offset": 3387,
+          "hex": "4e61736b6800"
+        }
+      ]
+    },
+    {
+      "file": "04-control-c.inp",
+      "file_size": 9216,
+      "file_sha256": "4c1281bcb0ebebed0b412585c14071a03e98c4b33510a1a091e650189a3edd3a",
+      "stream_size": 4249,
+      "stream_sha256": "7e3223d049c4b5a8b759b2c1574f696944716bc0ad088d3c4befd3c39da4a116",
+      "text_offset": 3671,
+      "text_byte_length": 43,
+      "default_header": {
+        "offset": 2164,
+        "length": 1041,
+        "sha256": "27c6364cca7e5646a0a27131feaebd260f69ce7559731453335cfe73cb2c3d55"
+      },
+      "expected_body": {
+        "font": "Naskh",
+        "font_size_pt": 11.0,
+        "weight": 400,
+        "bold": false,
+        "italic": false,
+        "alignment": "right"
+      },
+      "excerpts": [
+        {
+          "role": "format-entry",
+          "offset": 3723,
+          "hex": "010000000c000000010006000000800000000000"
+        },
+        {
+          "role": "format-entry",
+          "offset": 3743,
+          "hex": "2a0000001600000001001000000080000000000002020100007ff0550000"
+        },
+        {
+          "role": "format-entry",
+          "offset": 3773,
+          "hex": "010000000c000000010006000000800000000000"
+        },
+        {
+          "role": "default-urdu_font_slot",
+          "offset": 2188,
+          "hex": "02020000"
+        },
+        {
+          "role": "default-size_units",
+          "offset": 2284,
+          "hex": "007fc05d0000"
+        },
+        {
+          "role": "default-weight",
+          "offset": 2294,
+          "hex": "027f9001"
+        },
+        {
+          "role": "default-italic",
+          "offset": 2298,
+          "hex": "037f0000"
+        },
+        {
+          "role": "default-alignment",
+          "offset": 2402,
+          "hex": "807f0100"
+        },
+        {
+          "role": "font-slot-0",
+          "offset": 3333,
+          "hex": "4e6f6f7269204e617374616c697100"
+        },
+        {
+          "role": "font-slot-1",
+          "offset": 3387,
+          "hex": "4e61736b6800"
+        }
+      ]
+    },
+    {
+      "file": "05-size-11.inp",
+      "file_size": 9216,
+      "file_sha256": "7af4f867ecfd3205c62ece797b1b026a5f16a3aa7776f56c54d313a714d750de",
+      "stream_size": 4255,
+      "stream_sha256": "123358250cfcae8e67327f633db93a4a5cc5c43a0b803c8be18b8f66b9635e1c",
+      "text_offset": 3671,
+      "text_byte_length": 43,
+      "default_header": {
+        "offset": 2164,
+        "length": 1041,
+        "sha256": "27c6364cca7e5646a0a27131feaebd260f69ce7559731453335cfe73cb2c3d55"
+      },
+      "expected_body": {
+        "font": "Naskh",
+        "font_size_pt": 11.0,
+        "weight": 400,
+        "bold": false,
+        "italic": false,
+        "alignment": "right"
+      },
+      "excerpts": [
+        {
+          "role": "format-entry",
+          "offset": 3723,
+          "hex": "010000000c000000010006000000800000000000"
+        },
+        {
+          "role": "format-entry",
+          "offset": 3743,
+          "hex": "2a0000001600000001001000000080000000000002020100007ff0550000"
+        },
+        {
+          "role": "format-entry",
+          "offset": 3773,
+          "hex": "010000001200000001000c000000800000000000007ff0550000"
+        },
+        {
+          "role": "default-urdu_font_slot",
+          "offset": 2188,
+          "hex": "02020000"
+        },
+        {
+          "role": "default-size_units",
+          "offset": 2284,
+          "hex": "007fc05d0000"
+        },
+        {
+          "role": "default-weight",
+          "offset": 2294,
+          "hex": "027f9001"
+        },
+        {
+          "role": "default-italic",
+          "offset": 2298,
+          "hex": "037f0000"
+        },
+        {
+          "role": "default-alignment",
+          "offset": 2402,
+          "hex": "807f0100"
+        },
+        {
+          "role": "font-slot-0",
+          "offset": 3333,
+          "hex": "4e6f6f7269204e617374616c697100"
+        },
+        {
+          "role": "font-slot-1",
+          "offset": 3387,
+          "hex": "4e61736b6800"
+        }
+      ]
+    },
+    {
+      "file": "06-size-11_5.inp",
+      "file_size": 9216,
+      "file_sha256": "ca117e1f88a49fec1dc37bf670d1b47b3694ae8358cef001cb6d31df50a08f73",
+      "stream_size": 4255,
+      "stream_sha256": "5f9ea48fd9c362d9a521392221f853bfaab33c0d9fbc17af02a9e86edfb7c6d6",
+      "text_offset": 3671,
+      "text_byte_length": 43,
+      "default_header": {
+        "offset": 2164,
+        "length": 1041,
+        "sha256": "27c6364cca7e5646a0a27131feaebd260f69ce7559731453335cfe73cb2c3d55"
+      },
+      "expected_body": {
+        "font": "Naskh",
+        "font_size_pt": 11.5,
+        "weight": 400,
+        "bold": false,
+        "italic": false,
+        "alignment": "right"
+      },
+      "excerpts": [
+        {
+          "role": "format-entry",
+          "offset": 3723,
+          "hex": "010000000c000000010006000000800000000000"
+        },
+        {
+          "role": "format-entry",
+          "offset": 3743,
+          "hex": "2a0000001600000001001000000080000000000002020100007fd8590000"
+        },
+        {
+          "role": "format-entry",
+          "offset": 3773,
+          "hex": "010000001200000001000c000000800000000000007fd8590000"
+        },
+        {
+          "role": "default-urdu_font_slot",
+          "offset": 2188,
+          "hex": "02020000"
+        },
+        {
+          "role": "default-size_units",
+          "offset": 2284,
+          "hex": "007fc05d0000"
+        },
+        {
+          "role": "default-weight",
+          "offset": 2294,
+          "hex": "027f9001"
+        },
+        {
+          "role": "default-italic",
+          "offset": 2298,
+          "hex": "037f0000"
+        },
+        {
+          "role": "default-alignment",
+          "offset": 2402,
+          "hex": "807f0100"
+        },
+        {
+          "role": "font-slot-0",
+          "offset": 3333,
+          "hex": "4e6f6f7269204e617374616c697100"
+        },
+        {
+          "role": "font-slot-1",
+          "offset": 3387,
+          "hex": "4e61736b6800"
+        }
+      ]
+    },
+    {
+      "file": "07-size-14.inp",
+      "file_size": 9216,
+      "file_sha256": "b8dc33b8308927f1ff88a70919e2810e8092d242bd18334414d830cac89ef978",
+      "stream_size": 4255,
+      "stream_sha256": "e57d576119b351f97c7d494780373e2e460c6226f837be7e8e374b9fe3c8cb1e",
+      "text_offset": 3671,
+      "text_byte_length": 43,
+      "default_header": {
+        "offset": 2164,
+        "length": 1041,
+        "sha256": "27c6364cca7e5646a0a27131feaebd260f69ce7559731453335cfe73cb2c3d55"
+      },
+      "expected_body": {
+        "font": "Naskh",
+        "font_size_pt": 14.0,
+        "weight": 400,
+        "bold": false,
+        "italic": false,
+        "alignment": "right"
+      },
+      "excerpts": [
+        {
+          "role": "format-entry",
+          "offset": 3723,
+          "hex": "010000000c000000010006000000800000000000"
+        },
+        {
+          "role": "format-entry",
+          "offset": 3743,
+          "hex": "2a0000001600000001001000000080000000000002020100007f606d0000"
+        },
+        {
+          "role": "format-entry",
+          "offset": 3773,
+          "hex": "010000001200000001000c000000800000000000007f606d0000"
+        },
+        {
+          "role": "default-urdu_font_slot",
+          "offset": 2188,
+          "hex": "02020000"
+        },
+        {
+          "role": "default-size_units",
+          "offset": 2284,
+          "hex": "007fc05d0000"
+        },
+        {
+          "role": "default-weight",
+          "offset": 2294,
+          "hex": "027f9001"
+        },
+        {
+          "role": "default-italic",
+          "offset": 2298,
+          "hex": "037f0000"
+        },
+        {
+          "role": "default-alignment",
+          "offset": 2402,
+          "hex": "807f0100"
+        },
+        {
+          "role": "font-slot-0",
+          "offset": 3333,
+          "hex": "4e6f6f7269204e617374616c697100"
+        },
+        {
+          "role": "font-slot-1",
+          "offset": 3387,
+          "hex": "4e61736b6800"
+        }
+      ]
+    },
+    {
+      "file": "08-size-24.inp",
+      "file_size": 9216,
+      "file_sha256": "bd0e2404c719f7f1ce88f8e5efaf91351481e3c9bc7f65039227b304a5eccf8d",
+      "stream_size": 4255,
+      "stream_sha256": "fcb28f25b4fd70644c1a06b0f2bb53f94291bdaf3ecbae0f55923604b24fd175",
+      "text_offset": 3671,
+      "text_byte_length": 43,
+      "default_header": {
+        "offset": 2164,
+        "length": 1041,
+        "sha256": "27c6364cca7e5646a0a27131feaebd260f69ce7559731453335cfe73cb2c3d55"
+      },
+      "expected_body": {
+        "font": "Naskh",
+        "font_size_pt": 24.0,
+        "weight": 400,
+        "bold": false,
+        "italic": false,
+        "alignment": "right"
+      },
+      "excerpts": [
+        {
+          "role": "format-entry",
+          "offset": 3723,
+          "hex": "010000000c000000010006000000800000000000"
+        },
+        {
+          "role": "format-entry",
+          "offset": 3743,
+          "hex": "2a0000001600000001001000000080000000000002020100007f80bb0000"
+        },
+        {
+          "role": "format-entry",
+          "offset": 3773,
+          "hex": "010000001200000001000c000000800000000000007f80bb0000"
+        },
+        {
+          "role": "default-urdu_font_slot",
+          "offset": 2188,
+          "hex": "02020000"
+        },
+        {
+          "role": "default-size_units",
+          "offset": 2284,
+          "hex": "007fc05d0000"
+        },
+        {
+          "role": "default-weight",
+          "offset": 2294,
+          "hex": "027f9001"
+        },
+        {
+          "role": "default-italic",
+          "offset": 2298,
+          "hex": "037f0000"
+        },
+        {
+          "role": "default-alignment",
+          "offset": 2402,
+          "hex": "807f0100"
+        },
+        {
+          "role": "font-slot-0",
+          "offset": 3333,
+          "hex": "4e6f6f7269204e617374616c697100"
+        },
+        {
+          "role": "font-slot-1",
+          "offset": 3387,
+          "hex": "4e61736b6800"
+        }
+      ]
+    },
+    {
+      "file": "09-bold.inp",
+      "file_size": 9216,
+      "file_sha256": "ae23130e4ab685d1077bb9ede6d8131f92cfc7244e6204babfa1e259ae619215",
+      "stream_size": 4257,
+      "stream_sha256": "7fd989e5ff8bde1e344a0347ef8852b8637a39066c8e77bdcd1199abb52cdcad",
+      "text_offset": 3671,
+      "text_byte_length": 43,
+      "default_header": {
+        "offset": 2164,
+        "length": 1041,
+        "sha256": "27c6364cca7e5646a0a27131feaebd260f69ce7559731453335cfe73cb2c3d55"
+      },
+      "expected_body": {
+        "font": "Naskh",
+        "font_size_pt": 11.0,
+        "weight": 700,
+        "bold": true,
+        "italic": false,
+        "alignment": "right"
+      },
+      "excerpts": [
+        {
+          "role": "format-entry",
+          "offset": 3723,
+          "hex": "010000000c000000010006000000800000000000"
+        },
+        {
+          "role": "format-entry",
+          "offset": 3743,
+          "hex": "2a0000001a00000001001400000080000000000002020100007ff0550000027fbc02"
+        },
+        {
+          "role": "format-entry",
+          "offset": 3777,
+          "hex": "010000001000000001000a000000800000000000027fbc02"
+        },
+        {
+          "role": "default-urdu_font_slot",
+          "offset": 2188,
+          "hex": "02020000"
+        },
+        {
+          "role": "default-size_units",
+          "offset": 2284,
+          "hex": "007fc05d0000"
+        },
+        {
+          "role": "default-weight",
+          "offset": 2294,
+          "hex": "027f9001"
+        },
+        {
+          "role": "default-italic",
+          "offset": 2298,
+          "hex": "037f0000"
+        },
+        {
+          "role": "default-alignment",
+          "offset": 2402,
+          "hex": "807f0100"
+        },
+        {
+          "role": "font-slot-0",
+          "offset": 3333,
+          "hex": "4e6f6f7269204e617374616c697100"
+        },
+        {
+          "role": "font-slot-1",
+          "offset": 3387,
+          "hex": "4e61736b6800"
+        }
+      ]
+    },
+    {
+      "file": "10-italic.inp",
+      "file_size": 9216,
+      "file_sha256": "e3259918d6e41bb5ecacdaf0ff555f2237d1b77712594a65dffbeb5e9beb99a3",
+      "stream_size": 4257,
+      "stream_sha256": "2f52a02e624344546aac624cf255fcc652d4e6ce597369d9b191756069ae26e7",
+      "text_offset": 3671,
+      "text_byte_length": 43,
+      "default_header": {
+        "offset": 2164,
+        "length": 1041,
+        "sha256": "27c6364cca7e5646a0a27131feaebd260f69ce7559731453335cfe73cb2c3d55"
+      },
+      "expected_body": {
+        "font": "Naskh",
+        "font_size_pt": 11.0,
+        "weight": 400,
+        "bold": false,
+        "italic": true,
+        "alignment": "right"
+      },
+      "excerpts": [
+        {
+          "role": "format-entry",
+          "offset": 3723,
+          "hex": "010000000c000000010006000000800000000000"
+        },
+        {
+          "role": "format-entry",
+          "offset": 3743,
+          "hex": "2a0000001a00000001001400000080000000000002020100007ff0550000037f0100"
+        },
+        {
+          "role": "format-entry",
+          "offset": 3777,
+          "hex": "010000001000000001000a000000800000000000037f0100"
+        },
+        {
+          "role": "default-urdu_font_slot",
+          "offset": 2188,
+          "hex": "02020000"
+        },
+        {
+          "role": "default-size_units",
+          "offset": 2284,
+          "hex": "007fc05d0000"
+        },
+        {
+          "role": "default-weight",
+          "offset": 2294,
+          "hex": "027f9001"
+        },
+        {
+          "role": "default-italic",
+          "offset": 2298,
+          "hex": "037f0000"
+        },
+        {
+          "role": "default-alignment",
+          "offset": 2402,
+          "hex": "807f0100"
+        },
+        {
+          "role": "font-slot-0",
+          "offset": 3333,
+          "hex": "4e6f6f7269204e617374616c697100"
+        },
+        {
+          "role": "font-slot-1",
+          "offset": 3387,
+          "hex": "4e61736b6800"
+        }
+      ]
+    },
+    {
+      "file": "11-bold-italic.inp",
+      "file_size": 9216,
+      "file_sha256": "1a3d5ac0953ebab65470f4e29186806d820cbfa5b90d102f42d59ef258557af2",
+      "stream_size": 4265,
+      "stream_sha256": "bfb97dff5828ac9bbdc67eeee863e47c77db504e22fdb2e045604f4ab312e9e5",
+      "text_offset": 3671,
+      "text_byte_length": 43,
+      "default_header": {
+        "offset": 2164,
+        "length": 1041,
+        "sha256": "27c6364cca7e5646a0a27131feaebd260f69ce7559731453335cfe73cb2c3d55"
+      },
+      "expected_body": {
+        "font": "Naskh",
+        "font_size_pt": 11.0,
+        "weight": 700,
+        "bold": true,
+        "italic": true,
+        "alignment": "right"
+      },
+      "excerpts": [
+        {
+          "role": "format-entry",
+          "offset": 3723,
+          "hex": "010000000c000000010006000000800000000000"
+        },
+        {
+          "role": "format-entry",
+          "offset": 3743,
+          "hex": "2a0000001e00000001001800000080000000000002020100007ff0550000027fbc02037f0100"
+        },
+        {
+          "role": "format-entry",
+          "offset": 3781,
+          "hex": "010000001400000001000e000000800000000000027fbc02037f0100"
+        },
+        {
+          "role": "default-urdu_font_slot",
+          "offset": 2188,
+          "hex": "02020000"
+        },
+        {
+          "role": "default-size_units",
+          "offset": 2284,
+          "hex": "007fc05d0000"
+        },
+        {
+          "role": "default-weight",
+          "offset": 2294,
+          "hex": "027f9001"
+        },
+        {
+          "role": "default-italic",
+          "offset": 2298,
+          "hex": "037f0000"
+        },
+        {
+          "role": "default-alignment",
+          "offset": 2402,
+          "hex": "807f0100"
+        },
+        {
+          "role": "font-slot-0",
+          "offset": 3333,
+          "hex": "4e6f6f7269204e617374616c697100"
+        },
+        {
+          "role": "font-slot-1",
+          "offset": 3387,
+          "hex": "4e61736b6800"
+        }
+      ]
+    },
+    {
+      "file": "12-align-left.inp",
+      "file_size": 9216,
+      "file_sha256": "bf144fe0a5f49383f34b4a8ebb2aee39440e3501822c0df0e8160a76b777b1b0",
+      "stream_size": 4257,
+      "stream_sha256": "82d8dfb15799567910ff169c778ebf15b1685f65c31c1bd27f0054a36e50fd2c",
+      "text_offset": 3671,
+      "text_byte_length": 43,
+      "default_header": {
+        "offset": 2164,
+        "length": 1041,
+        "sha256": "27c6364cca7e5646a0a27131feaebd260f69ce7559731453335cfe73cb2c3d55"
+      },
+      "expected_body": {
+        "font": "Naskh",
+        "font_size_pt": 11.0,
+        "weight": 400,
+        "bold": false,
+        "italic": false,
+        "alignment": "left"
+      },
+      "excerpts": [
+        {
+          "role": "format-entry",
+          "offset": 3723,
+          "hex": "010000000c000000010006000000800000000000"
+        },
+        {
+          "role": "format-entry",
+          "offset": 3743,
+          "hex": "2a0000001a00000001001400000080000000000002020100007ff0550000807f0000"
+        },
+        {
+          "role": "format-entry",
+          "offset": 3777,
+          "hex": "010000001000000001000a000000800000000000807f0000"
+        },
+        {
+          "role": "default-urdu_font_slot",
+          "offset": 2188,
+          "hex": "02020000"
+        },
+        {
+          "role": "default-size_units",
+          "offset": 2284,
+          "hex": "007fc05d0000"
+        },
+        {
+          "role": "default-weight",
+          "offset": 2294,
+          "hex": "027f9001"
+        },
+        {
+          "role": "default-italic",
+          "offset": 2298,
+          "hex": "037f0000"
+        },
+        {
+          "role": "default-alignment",
+          "offset": 2402,
+          "hex": "807f0100"
+        },
+        {
+          "role": "font-slot-0",
+          "offset": 3333,
+          "hex": "4e6f6f7269204e617374616c697100"
+        },
+        {
+          "role": "font-slot-1",
+          "offset": 3387,
+          "hex": "4e61736b6800"
+        }
+      ]
+    },
+    {
+      "file": "13-align-center.inp",
+      "file_size": 9216,
+      "file_sha256": "c92fdf7f63065764a73ce4922af7b79a17b5d68fe7cb937a34bb3da5b78015c8",
+      "stream_size": 4257,
+      "stream_sha256": "1f60c18cdc743fab9b8c6fd3c9a6f19be524f3acc6bf06182a95cb0746c46200",
+      "text_offset": 3671,
+      "text_byte_length": 43,
+      "default_header": {
+        "offset": 2164,
+        "length": 1041,
+        "sha256": "27c6364cca7e5646a0a27131feaebd260f69ce7559731453335cfe73cb2c3d55"
+      },
+      "expected_body": {
+        "font": "Naskh",
+        "font_size_pt": 11.0,
+        "weight": 400,
+        "bold": false,
+        "italic": false,
+        "alignment": "center"
+      },
+      "excerpts": [
+        {
+          "role": "format-entry",
+          "offset": 3723,
+          "hex": "010000000c000000010006000000800000000000"
+        },
+        {
+          "role": "format-entry",
+          "offset": 3743,
+          "hex": "2a0000001a00000001001400000080000000000002020100007ff0550000807f0200"
+        },
+        {
+          "role": "format-entry",
+          "offset": 3777,
+          "hex": "010000001000000001000a000000800000000000807f0200"
+        },
+        {
+          "role": "default-urdu_font_slot",
+          "offset": 2188,
+          "hex": "02020000"
+        },
+        {
+          "role": "default-size_units",
+          "offset": 2284,
+          "hex": "007fc05d0000"
+        },
+        {
+          "role": "default-weight",
+          "offset": 2294,
+          "hex": "027f9001"
+        },
+        {
+          "role": "default-italic",
+          "offset": 2298,
+          "hex": "037f0000"
+        },
+        {
+          "role": "default-alignment",
+          "offset": 2402,
+          "hex": "807f0100"
+        },
+        {
+          "role": "font-slot-0",
+          "offset": 3333,
+          "hex": "4e6f6f7269204e617374616c697100"
+        },
+        {
+          "role": "font-slot-1",
+          "offset": 3387,
+          "hex": "4e61736b6800"
+        }
+      ]
+    },
+    {
+      "file": "14-align-justify.inp",
+      "file_size": 9216,
+      "file_sha256": "b2139942208b07fe021ec9224855a56f7078873c68ce01912963ee9816116821",
+      "stream_size": 4257,
+      "stream_sha256": "3f46a0352d05f93d9980f0459db0b7b2aba30573bde510b7b7154b8c147ac241",
+      "text_offset": 3671,
+      "text_byte_length": 43,
+      "default_header": {
+        "offset": 2164,
+        "length": 1041,
+        "sha256": "27c6364cca7e5646a0a27131feaebd260f69ce7559731453335cfe73cb2c3d55"
+      },
+      "expected_body": {
+        "font": "Naskh",
+        "font_size_pt": 11.0,
+        "weight": 400,
+        "bold": false,
+        "italic": false,
+        "alignment": "justify"
+      },
+      "excerpts": [
+        {
+          "role": "format-entry",
+          "offset": 3723,
+          "hex": "010000000c000000010006000000800000000000"
+        },
+        {
+          "role": "format-entry",
+          "offset": 3743,
+          "hex": "2a0000001a00000001001400000080000000000002020100007ff0550000807f0400"
+        },
+        {
+          "role": "format-entry",
+          "offset": 3777,
+          "hex": "010000001000000001000a000000800000000000807f0400"
+        },
+        {
+          "role": "default-urdu_font_slot",
+          "offset": 2188,
+          "hex": "02020000"
+        },
+        {
+          "role": "default-size_units",
+          "offset": 2284,
+          "hex": "007fc05d0000"
+        },
+        {
+          "role": "default-weight",
+          "offset": 2294,
+          "hex": "027f9001"
+        },
+        {
+          "role": "default-italic",
+          "offset": 2298,
+          "hex": "037f0000"
+        },
+        {
+          "role": "default-alignment",
+          "offset": 2402,
+          "hex": "807f0100"
+        },
+        {
+          "role": "font-slot-0",
+          "offset": 3333,
+          "hex": "4e6f6f7269204e617374616c697100"
+        },
+        {
+          "role": "font-slot-1",
+          "offset": 3387,
+          "hex": "4e61736b6800"
+        }
+      ]
+    },
+    {
+      "file": "15-font-noori.inp",
+      "file_size": 9216,
+      "file_sha256": "9d3050e933708176d54a56765e719205c245aa34570ad99f123f12440e9062d0",
+      "stream_size": 4245,
+      "stream_sha256": "2f89054028d313427892b57ffdbad69246bbea4106a5e6b0589a2c816cfd0d12",
+      "text_offset": 3671,
+      "text_byte_length": 43,
+      "default_header": {
+        "offset": 2164,
+        "length": 1041,
+        "sha256": "27c6364cca7e5646a0a27131feaebd260f69ce7559731453335cfe73cb2c3d55"
+      },
+      "expected_body": {
+        "font": "Noori Nastaliq",
+        "font_size_pt": 11.0,
+        "weight": 400,
+        "bold": false,
+        "italic": false,
+        "alignment": "right"
+      },
+      "excerpts": [
+        {
+          "role": "format-entry",
+          "offset": 3723,
+          "hex": "010000000c000000010006000000800000000000"
+        },
+        {
+          "role": "format-entry",
+          "offset": 3743,
+          "hex": "2a0000001200000001000c000000800000000000007ff0550000"
+        },
+        {
+          "role": "format-entry",
+          "offset": 3769,
+          "hex": "010000000c000000010006000000800000000000"
+        },
+        {
+          "role": "default-urdu_font_slot",
+          "offset": 2188,
+          "hex": "02020000"
+        },
+        {
+          "role": "default-size_units",
+          "offset": 2284,
+          "hex": "007fc05d0000"
+        },
+        {
+          "role": "default-weight",
+          "offset": 2294,
+          "hex": "027f9001"
+        },
+        {
+          "role": "default-italic",
+          "offset": 2298,
+          "hex": "037f0000"
+        },
+        {
+          "role": "default-alignment",
+          "offset": 2402,
+          "hex": "807f0100"
+        },
+        {
+          "role": "font-slot-0",
+          "offset": 3333,
+          "hex": "4e6f6f7269204e617374616c697100"
+        },
+        {
+          "role": "font-slot-1",
+          "offset": 3387,
+          "hex": "4e61736b6800"
+        }
+      ]
+    }
+  ],
+  "shared_text_sha256": "8feb9c68070e95bc0eb6824420b7cfdea2cc95eab0e260300b620662c5b237af",
+  "reference_sample": "02-control-a.inp"
+}

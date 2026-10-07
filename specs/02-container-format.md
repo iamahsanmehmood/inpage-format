@@ -31,7 +31,13 @@ An InPage document contains up to three named streams:
 | `InPage200` | Exclusive | Content — InPage v2.x files |
 | `InPage300` | Exclusive | Content — InPage v3.x files |
 
-Only **one** of `InPage100`, `InPage200`, or `InPage300` will be present. The stream name indicates the document version.
+Only **one** of `InPage100`, `InPage200`, or `InPage300` will be present. The stream name identifies the document-format family used for decoder
+selection, not necessarily the producing application's release or branding.
+For example, the [controlled formatting fixtures](native-formatting-evidence.md)
+were created in an installation whose About dialog displays "INPAGE 2014"
+and whose version resources report FileVersion 1.0.0.1 / ProductVersion
+2.0.0.0, yet all fifteen contain `InPage100`. Those resource values do not
+establish an official vendor release version.
 
 ## Version Detection
 

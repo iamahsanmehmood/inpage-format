@@ -1,0 +1,20 @@
+test_all_native_envelopes_and_body_properties (test_reader.NativeExcerptTests.test_all_native_envelopes_and_body_properties) ... ok
+test_composition_has_distinct_bold_and_italic_fields (test_reader.NativeExcerptTests.test_composition_has_distinct_bold_and_italic_fields) ... ok
+test_duplicate_property_is_rejected (test_reader.NativeExcerptTests.test_duplicate_property_is_rejected) ... ok
+test_every_truncated_native_entry_is_rejected (test_reader.NativeExcerptTests.test_every_truncated_native_entry_is_rejected) ... ok
+test_explicit_zero_alignment_beats_default_right (test_reader.NativeExcerptTests.test_explicit_zero_alignment_beats_default_right) ... ok
+test_fractional_size_survives_without_rounding (test_reader.NativeExcerptTests.test_fractional_size_survives_without_rounding) ... ok
+test_inner_length_cannot_escape_outer_envelope (test_reader.NativeExcerptTests.test_inner_length_cannot_escape_outer_envelope) ... ok
+test_literal_space_pair_is_preserved (test_reader.NativeExcerptTests.test_literal_space_pair_is_preserved) ... ok
+test_missing_font_slot_does_not_shift_indices (test_reader.NativeExcerptTests.test_missing_font_slot_does_not_shift_indices) ... ok
+test_nonzero_base_reference_is_not_silently_inherited (test_reader.NativeExcerptTests.test_nonzero_base_reference_is_not_silently_inherited) ... ok
+test_normal_baseline_differs_from_trailing_cr (test_reader.NativeExcerptTests.test_normal_baseline_differs_from_trailing_cr) ... ok
+test_outer_length_cannot_escape_container (test_reader.NativeExcerptTests.test_outer_length_cannot_escape_container) ... ok
+test_unknown_glyph_is_not_discarded (test_reader.NativeExcerptTests.test_unknown_glyph_is_not_discarded) ... ok
+test_unknown_property_width_is_not_guessed (test_reader.NativeExcerptTests.test_unknown_property_width_is_not_guessed) ... ok
+test_unverified_weight_is_not_called_bold (test_reader.NativeExcerptTests.test_unverified_weight_is_not_called_bold) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 0.004s
+
+OK

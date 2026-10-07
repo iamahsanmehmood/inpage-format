@@ -4,6 +4,14 @@ InPage stores formatting metadata (font, size, alignment, bold, color, indentati
 
 > **Status**: Partially reverse-engineered. Text extraction works without this. Formatting extraction is optional and approximate.
 
+> **Controlled native counterexample:** The single-paragraph
+> `InPage100` corpus in [the new native evidence](native-formatting-evidence.md)
+> uses length-bounded records after its text, including a four-byte
+> size value matching 2,000 units per point, separate weight/italic
+> properties, and another alignment encoding. The current heuristic
+> reader misses those fields. That note distinguishes measurements
+> from inferred text ownership; do not apply this page universally.
+
 ---
 
 ## Unit Conversion
